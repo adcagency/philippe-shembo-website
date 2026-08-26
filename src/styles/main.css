@@ -46,6 +46,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .site-nav a:hover { color: var(--gold); }
 .language { display: flex; gap: .5rem; align-items: center; font-size: .84rem; }
 .language a[aria-current='page'] { color: var(--gold); font-weight: 900; }
+.site-nav a[aria-current='page'] { color: var(--gold); font-weight: 900; }
 .hero { position: relative; overflow: hidden; background: radial-gradient(circle at 75% 15%, #7824ae 0, var(--violet) 42%, var(--violet-dark) 100%); color: var(--paper); }
 .hero::after { position: absolute; inset: 0; background: url('/assets/patterns/pas-pattern-01.webp') center / cover; opacity: .08; content: ''; pointer-events: none; }
 .hero-grid { position: relative; z-index: 1; display: grid; min-height: 42rem; align-items: end; gap: 2rem; padding-top: 4rem; }
