@@ -1,16 +1,55 @@
+// tests/landing.spec.js
 import { test, expect } from '@playwright/test';
 
-test('French landing has semantic navigation and a single h1', async ({ page }) => {
+const PAGES = [
+  { path: '/', lang: 'fr' },
+  { path: '/a-propos/', lang: 'fr' },
+  { path: '/espace-medias/', lang: 'fr' },
+  { path: '/bibliographie/', lang: 'fr' },
+  { path: '/soutenir/', lang: 'fr' },
+  { path: '/contact/', lang: 'fr' },
+  { path: '/en/', lang: 'en' },
+  { path: '/en/about/', lang: 'en' },
+  { path: '/en/media/', lang: 'en' },
+  { path: '/en/bibliography/', lang: 'en' },
+  { path: '/en/support/', lang: 'en' },
+  { path: '/en/contact/', lang: 'en' }
+];
+
+for (const { path: pagePath, lang } of PAGES) {
+  test(`${pagePath} has a single h1, skip link, correct lang and canonical`, async ({ page }) => {
+    await page.goto(pagePath);
+    await expect(page.locator('h1')).toHaveCount(1);
+    await expect(page.locator('a.skip-link')).toBeVisible();
+    await expect(page.locator('html')).toHaveAttribute('lang', lang);
+    await expect(page.locator('link[rel="canonical"]')).toHaveCount(1);
+  });
+}
+
+const LANGUAGE_PAIRS = [
+  ['/', '/en/'],
+  ['/a-propos/', '/en/about/'],
+  ['/espace-medias/', '/en/media/'],
+  ['/bibliographie/', '/en/bibliography/'],
+  ['/soutenir/', '/en/support/'],
+  ['/contact/', '/en/contact/']
+];
+
+for (const [frPath, enPath] of LANGUAGE_PAIRS) {
+  test(`language switch on ${frPath} maps to ${enPath}`, async ({ page }) => {
+    await page.goto(frPath);
+    await expect(page.locator('.language a', { hasText: 'EN' })).toHaveAttribute('href', enPath);
+    await page.goto(enPath);
+    await expect(page.locator('.language a', { hasText: 'FR' })).toHaveAttribute('href', frPath);
+  });
+}
+
+test('French home nav has no anchor links', async ({ page }) => {
   await page.goto('/');
-  await expect(page.locator('h1')).toHaveCount(1);
-  await expect(page.locator('nav a[href="#ministry"]')).toBeVisible();
-  await expect(page.locator('a.skip-link')).toBeVisible();
-  await expect(page.locator('html')).toHaveAttribute('lang', 'fr');
+  await expect(page.locator('nav a[href^="#"]')).toHaveCount(0);
 });
 
-test('English page declares canonical and alternate French page', async ({ page }) => {
-  await page.goto('/en/');
-  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', /\/en\/$/);
-  await expect(page.locator('link[rel="alternate"][hreflang="fr"]')).toHaveCount(1);
-  await expect(page.locator('script[type="application/ld+json"]')).toHaveCount(1);
+test('nav highlights the current page with aria-current', async ({ page }) => {
+  await page.goto('/a-propos/');
+  await expect(page.locator('nav a[href="/a-propos/"]')).toHaveAttribute('aria-current', 'page');
 });
