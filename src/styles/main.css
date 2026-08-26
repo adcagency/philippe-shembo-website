@@ -67,6 +67,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .metric span { display: block; margin-top: .35rem; font-size: .92rem; }
 .vision-grid, .bio-grid { display: grid; gap: 2rem; }
 .quote { margin: 0; padding: 1.5rem; border-left: 3px solid var(--gold); font: 700 clamp(1.4rem, 3vw, 2rem)/1.25 var(--serif); }
+.overview-grid { display: grid; gap: 1rem; }
+.overview-card { padding: 1.5rem; border: 1px solid var(--line); background: var(--paper); }
+.overview-card h3 { margin: 0 0 .5rem; color: var(--violet); font: 800 1.3rem/1.15 var(--serif); }
+.overview-card p { margin: 0 0 1rem; color: var(--muted); }
+.overview-link { font-weight: 900; color: var(--violet); text-decoration: underline; text-underline-offset: .18em; }
 .cards { display: grid; gap: 1rem; }
 .mission-card { padding: 1.55rem; border: 1px solid var(--line); background: var(--paper); }
 .mission-card h3 { margin: 0 0 .65rem; color: var(--violet); font: 800 1.45rem/1.15 var(--serif); }
@@ -108,7 +113,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .hero-grid { grid-template-columns: 1.1fr .9fr; }
   .metrics { grid-template-columns: repeat(4, 1fr); }
   .vision-grid, .bio-grid { grid-template-columns: 1fr 1fr; }
-  .cards, .sermon-grid, .support-grid { grid-template-columns: repeat(2, 1fr); }
+  .cards, .sermon-grid, .support-grid, .overview-grid { grid-template-columns: repeat(2, 1fr); }
   .books { grid-template-columns: repeat(3, 1fr); }
 }
 @media (min-width: 900px) {
@@ -121,6 +126,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .cards { grid-template-columns: repeat(4, 1fr); }
   .sermon-grid { grid-template-columns: repeat(3, 1fr); }
   .support-grid { grid-template-columns: repeat(3, 1fr); }
+  .overview-grid { grid-template-columns: repeat(3, 1fr); }
   .books { grid-template-columns: repeat(6, 1fr); }
   .book div { padding: .85rem; }
 }
