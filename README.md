@@ -1,6 +1,6 @@
 # Philippe A. Shembo — Landing bilingue
 
-Site vitrine statique (FR/EN) pour le ministère de Philippe A. Shembo. Aucun framework, aucun build : `index.html` (FR, `/`) et `en/index.html` (EN, `/en/`) sont deux documents HTML indépendants.
+Site vitrine statique (FR/EN) pour le ministère de Philippe A. Shembo. Aucun framework : 12 pages HTML (6 pages logiques × FR/EN) sont générées par `scripts/build-pages.mjs` à partir de partials et de modules de contenu, puis committées à leur chemin de publication final (pas de dossier `dist/` séparé).
 
 ## Commandes locales
 
@@ -15,7 +15,7 @@ Site vitrine statique (FR/EN) pour le ministère de Philippe A. Shembo. Aucun fr
 
 - `Ressources/` — fichiers sources originaux fournis par le client (photos, logos, motifs, couvertures). Ne jamais modifier ces fichiers en place.
 - `public/assets/` — sortie générée par `scripts/optimize-assets.mjs`, ignorée par git (`.gitignore`), régénérable à tout moment via `npm run assets`.
-- `src/data/site-content.js` — contrat de contenu (URLs sociales, 14 livres, placeholders de soutien/contact). N'est pas injecté dans le HTML au rendu ; toute donnée éditoriale doit être mise à jour à la fois ici et dans le texte codé en dur des deux fichiers HTML.
+- `src/data/site-content.js` — contrat de contenu partagé (URLs sociales, etc.), importé et utilisé par `src/build/render-page.js` (ex. tableau `sameAs` du JSON-LD Person). Le contenu propre à chaque page (titres, livres, coordonnées de soutien/contact) vit dans `src/pages/*.js`.
 - `src/styles/main.css` — feuille de style unique, tokens en variables CSS.
 - `src/scripts/site.js` — seul JavaScript du site, amélioration progressive uniquement (menu mobile, liens de langue).
 - `src/pages/*.js`, `src/partials/*.js`, `src/build/render-page.js` — source de vérité du contenu et de l'assemblage des pages ; `scripts/build-pages.mjs` les combine pour écrire les 12 fichiers HTML finaux (committés, pas dans un dossier `dist/`).
@@ -24,7 +24,7 @@ Site vitrine statique (FR/EN) pour le ministère de Philippe A. Shembo. Aucun fr
 
 - HTTPS obligatoire ; prévoir des redirections 301 cohérentes (ex. `www` → domaine canonique) une fois le nom de domaine final choisi.
 - `public/robots.txt` et `public/sitemap.xml` contiennent le domaine placeholder `example.org` : à remplacer par le domaine réel avant mise en production (voir `docs/publishing-checklist.md`).
-- Vérifier `index.html` et `en/index.html` : balises `canonical`, `hreflang`, Open Graph et JSON-LD doivent référencer le domaine final.
+- Vérifier les 12 pages générées (FR et EN) : balises `canonical`, `hreflang`, Open Graph et JSON-LD doivent référencer le domaine final.
 
 ## Mesure : Search Console et GA4
 
@@ -42,4 +42,6 @@ Site vitrine statique (FR/EN) pour le ministère de Philippe A. Shembo. Aucun fr
 
 - Spec : `docs/superpowers/specs/2026-08-26-philippe-shembo-landing-design.md`
 - Plan d'implémentation : `docs/superpowers/plans/2026-08-26-philippe-shembo-landing-implementation.md`
+- Spec navigation multi-pages : `docs/superpowers/specs/2026-08-26-multi-page-navigation-design.md`
+- Plan d'implémentation navigation multi-pages : `docs/superpowers/plans/2026-08-26-multi-page-navigation-implementation.md`
 - Checklist avant publication : `docs/publishing-checklist.md`
