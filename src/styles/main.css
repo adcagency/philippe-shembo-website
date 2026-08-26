@@ -74,23 +74,23 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .overview-link { font-weight: 900; color: var(--violet); text-decoration: underline; text-underline-offset: .18em; }
 .cards { display: grid; gap: 1rem; }
 .mission-card { padding: 1.55rem; border: 1px solid var(--line); background: var(--paper); }
-.mission-card h3 { margin: 0 0 .65rem; color: var(--violet); font: 800 1.45rem/1.15 var(--serif); }
+.mission-card h2 { margin: 0 0 .65rem; color: var(--violet); font: 800 1.45rem/1.15 var(--serif); }
 .mission-card p { margin: 0; }
 .sermon-grid { display: grid; gap: 1rem; }
 .sermon { position: relative; min-height: 15rem; padding: 1.5rem; display: flex; flex-direction: column; justify-content: end; border: 1px solid rgb(212 175 55 / 45%); background: linear-gradient(135deg, #3D006C, #150024); color: var(--paper); text-decoration: none; }
 .sermon::before { position: absolute; inset: 1rem; border: 1px solid rgb(255 255 255 / 12%); content: ''; }
 .sermon > * { position: relative; }
 .sermon span { color: var(--gold); font: 600 .82rem/1 var(--label); letter-spacing: .1em; text-transform: uppercase; }
-.sermon h3 { margin: .5rem 0 0; font: 700 1.45rem/1.1 var(--serif); }
+.sermon h2 { margin: .5rem 0 0; font: 700 1.45rem/1.1 var(--serif); }
 .books { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 .book { overflow: hidden; background: var(--paper); box-shadow: var(--shadow); }
 .book img { width: 100%; aspect-ratio: 1; object-fit: cover; }
 .book div { padding: 1rem; }
-.book h3 { margin: 0; color: var(--violet); font: 700 1.15rem/1.2 var(--serif); }
+.book h2 { margin: 0; color: var(--violet); font: 700 1.15rem/1.2 var(--serif); }
 .book p { margin: .45rem 0 0; color: var(--muted); font-size: .9rem; }
 .support-grid { display: grid; gap: 1rem; }
 .support-card { padding: 1.5rem; border: 1px solid rgb(212 175 55 / 50%); background: rgb(255 255 255 / 7%); }
-.support-card h3 { margin: 0 0 1rem; color: var(--gold); font: 700 1.45rem/1.15 var(--serif); }
+.support-card h2 { margin: 0 0 1rem; color: var(--gold); font: 700 1.45rem/1.15 var(--serif); }
 .support-card dl { margin: 0; }
 .support-card dt { margin-top: .75rem; color: #D7C9E0; font-size: .82rem; font-weight: 900; text-transform: uppercase; }
 .support-card dd { margin: 0; }
@@ -100,7 +100,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .timeline-item time { color: var(--violet); font: 700 1rem var(--label); }
 .timeline-item p { margin: 0; }
 .contact-box { padding: 2rem; background: var(--violet); color: var(--paper); }
-.contact-box h2 { margin: 0 0 .75rem; font: 800 clamp(2rem, 5vw, 3.5rem)/1.05 var(--serif); }
+.contact-box h1 { margin: 0 0 .75rem; font: 800 clamp(2rem, 5vw, 3.5rem)/1.05 var(--serif); }
 .contact-box p { max-width: 39rem; }
 .socials { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.25rem; }
 .socials a { min-height: 44px; display: inline-flex; align-items: center; padding: .55rem .8rem; border: 1px solid rgb(255 255 255 / 60%); text-decoration: none; }

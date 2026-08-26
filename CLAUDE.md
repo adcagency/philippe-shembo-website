@@ -10,18 +10,19 @@ Spec and plan (authoritative for editorial rules, placeholder policy, and design
 
 ## Commands
 
-- `npm test` — runs `node --test tests/site-content.test.js` (content-contract checks against `src/data/site-content.js`).
+- `npm test` — runs `node --test tests/**/*.test.js` (all `*.test.js` files under `tests/`: content contract, nav config, partials, render-page, per-page content modules, site.js).
+- `npm run build` — runs `scripts/build-pages.mjs`, regenerating all 12 committed HTML pages from `src/partials/`, `src/data/nav-config.js`, and `src/pages/*.js`. Run this after any change to those source modules, before serving or committing — the generated HTML files themselves are never hand-edited.
 - `npm run test:e2e` — Playwright browser tests (`tests/landing.spec.js`), served against `http://127.0.0.1:4173`. `npx playwright test -g "<name>"` runs a single test by title; add `--project=chromium` to pin one browser.
 - `npm run serve` — serves the repo root at port 4173 (used automatically as Playwright's `webServer`, `reuseExistingServer: true`).
 - `npm run assets` — runs `scripts/optimize-assets.mjs`, regenerating `public/assets/` from `Ressources/`. Run this after any change to source files under `Ressources/`; `public/assets/` is gitignored and not checked in.
 
-There is no lint/build/typecheck script; CSS and HTML are edited directly.
+There is no lint/typecheck script. CSS is edited directly; HTML is generated — edit `src/pages/*.js`, `src/partials/*.js`, or `src/data/nav-config.js` and run `npm run build`, never the committed HTML files directly.
 
 ## Architecture
 
 - `scripts/build-pages.mjs` — generates all 12 pages by calling `renderPage()` (`src/build/render-page.js`) once per page × language, writing each to its final served path (e.g. `a-propos/index.html`). Run `npm run build` before serving or committing after any content/nav/partial change.
 - `src/data/nav-config.js` — single source of truth for the 5 section pages' nav labels and FR/EN paths, plus the home path. `src/partials/header.js` and `src/partials/footer.js` render the shared chrome from it. `src/pages/*.js` hold the per-page title/description/OG/body content for each of the 6 logical pages (home, about, media, bibliography, support, contact), written by hand in both languages (no automated translation).
-- `src/scripts/site.js` — the only JS, loaded as an ES module. Progressive enhancement only (mobile nav toggle, Escape-to-close, language-switcher links preserving the current `#hash`); must never gate indexable content.
+- `src/scripts/site.js` — the only JS, loaded as an ES module. Progressive enhancement only (mobile nav toggle, Escape-to-close); must never gate indexable content.
 - `src/styles/main.css` — single stylesheet, CSS custom properties for design tokens, no preprocessor.
 - `scripts/optimize-assets.mjs` — copies fixed source→output path pairs from `Ressources/` to `public/assets/` and generates `.webp` derivatives via `sharp`. Throws if a required source file is missing. Never edit files under `Ressources/` in place; it's the untouched original asset source.
 - `Ressources/` — original, unmodified source assets (photos, logos, motifs, book covers) provided by the client. `public/assets/` is the derived/optimized publish output and is gitignored.

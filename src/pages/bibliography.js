@@ -1,5 +1,5 @@
-const frBookCard = (n) => `<article class="book"><img src="/assets/books/book-${n}.webp" width="1080" height="1080" alt="Couverture d’ouvrage de Philippe A. Shembo — titre à renseigner" loading="lazy" decoding="async"><div><h3>Titre à renseigner</h3><p>Fiche à renseigner</p></div></article>`;
-const enBookCard = (n) => `<article class="book"><img src="/assets/books/book-${n}.webp" width="1080" height="1080" alt="Book cover by Philippe A. Shembo — title to be provided" loading="lazy" decoding="async"><div><h3>Title to be provided</h3><p>Details to be provided</p></div></article>`;
+const frBookCard = (n) => `<article class="book"><img src="/assets/books/book-${n}.webp" width="1080" height="1080" alt="Couverture d’ouvrage de Philippe A. Shembo — titre à renseigner" loading="lazy" decoding="async"><div><h2>Titre à renseigner</h2><p>Fiche à renseigner</p></div></article>`;
+const enBookCard = (n) => `<article class="book"><img src="/assets/books/book-${n}.webp" width="1080" height="1080" alt="Book cover by Philippe A. Shembo — title to be provided" loading="lazy" decoding="async"><div><h2>Title to be provided</h2><p>Details to be provided</p></div></article>`;
 const NUMBERS = ['01', '02', '03', '04', '05', '06'];
 
 export const bibliographyPage = {

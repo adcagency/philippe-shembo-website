@@ -6,7 +6,7 @@ Ne pas publier ce site en production tant que chaque valeur ci-dessous n'a pas �
 
 | Valeur | Emplacement(s) | Statut |
 |---|---|---|
-| **Domain** final (remplace `example.org`) | `index.html`, `en/index.html` (canonical, hreflang, OG), `public/robots.txt`, `public/sitemap.xml` | À renseigner |
+| **Domain** final (remplace `example.org`) | `src/build/render-page.js` (constante `SITE_ORIGIN`), `public/robots.txt`, `public/sitemap.xml` — relancer `npm run build` après modification pour régénérer les 12 pages HTML | À renseigner |
 | Email de contact | `src/pages/contact.js`, `contact/index.html`/`en/contact/index.html` | À renseigner |
 | Banque (nom, titulaire, **IBAN**, BIC/SWIFT) | `src/pages/support.js`, `soutenir/index.html`/`en/support/index.html` | À renseigner |
 | **Mobile money** (opérateur, numéro, bénéficiaire) | `src/pages/support.js`, `soutenir/index.html`/`en/support/index.html` | À renseigner |
@@ -24,7 +24,7 @@ Ne pas publier ce site en production tant que chaque valeur ci-dessous n'a pas �
 
 ## Vérifications finales avant mise en ligne
 
-- [ ] `npm run assets && npm test && npx playwright test` passent sans échec.
+- [ ] `npm run assets && npm run build && npm test && npx playwright test` passent sans échec.
 - [ ] Aucun lien actif ne pointe vers un placeholder d'achat, de paiement ou d'email.
 - [ ] `public/robots.txt` et `public/sitemap.xml` référencent le domaine final, plus `example.org`.
 - [ ] Search Console : propriété de domaine vérifiée, sitemap soumis.
