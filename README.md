@@ -9,6 +9,7 @@ Site vitrine statique (FR/EN) pour le ministère de Philippe A. Shembo. Aucun fr
 - `npm run test:e2e` — tests navigateur Playwright (`tests/landing.spec.js`), servis sur `http://127.0.0.1:4173`.
 - `npm run serve` — sert la racine du dépôt sur le port 4173.
 - `npm run assets` — régénère `public/assets/` à partir de `Ressources/` (copie + dérivés `.webp` via `sharp`). À relancer après toute modification des fichiers sous `Ressources/`.
+- `npm run build` — régénère les 12 pages HTML (`scripts/build-pages.mjs`) à partir de `src/partials/`, `src/data/nav-config.js` et `src/pages/*.js`. À relancer avant de committer tout changement de navigation, de pied de page ou de contenu de page.
 
 ## Pipeline d'assets et propriété des fichiers
 
@@ -17,6 +18,7 @@ Site vitrine statique (FR/EN) pour le ministère de Philippe A. Shembo. Aucun fr
 - `src/data/site-content.js` — contrat de contenu (URLs sociales, 14 livres, placeholders de soutien/contact). N'est pas injecté dans le HTML au rendu ; toute donnée éditoriale doit être mise à jour à la fois ici et dans le texte codé en dur des deux fichiers HTML.
 - `src/styles/main.css` — feuille de style unique, tokens en variables CSS.
 - `src/scripts/site.js` — seul JavaScript du site, amélioration progressive uniquement (menu mobile, liens de langue).
+- `src/pages/*.js`, `src/partials/*.js`, `src/build/render-page.js` — source de vérité du contenu et de l'assemblage des pages ; `scripts/build-pages.mjs` les combine pour écrire les 12 fichiers HTML finaux (committés, pas dans un dossier `dist/`).
 
 ## Déploiement
 

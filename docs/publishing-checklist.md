@@ -7,12 +7,12 @@ Ne pas publier ce site en production tant que chaque valeur ci-dessous n'a pas �
 | Valeur | Emplacement(s) | Statut |
 |---|---|---|
 | **Domain** final (remplace `example.org`) | `index.html`, `en/index.html` (canonical, hreflang, OG), `public/robots.txt`, `public/sitemap.xml` | À renseigner |
-| Email de contact | `src/data/site-content.js` (`SITE_CONTENT.contact.email`), `index.html`/`en/index.html` section Contact | À renseigner |
-| Banque (nom, titulaire, **IBAN**, BIC/SWIFT) | `src/data/site-content.js` (`SITE_CONTENT.support.bank`), section Soutenir des deux HTML | À renseigner |
-| **Mobile money** (opérateur, numéro, bénéficiaire) | `src/data/site-content.js` (`SITE_CONTENT.support.mobileMoney`), section Soutenir des deux HTML | À renseigner |
-| Autre moyen de soutien (nom, URL, devise) | `src/data/site-content.js` (`SITE_CONTENT.support.other`) | À renseigner |
-| Titre, résumé et **book URL** (URL d'achat individuelle) par ouvrage | `src/data/site-content.js` (`SITE_CONTENT.books[].title/description/url`), section Livres des deux HTML | À renseigner (14 entrées) |
-| Titre, date et **sermon URL** individuelle par prédication | Section Prédications des deux HTML (actuellement liens génériques vers la chaîne) | À renseigner (3 entrées) |
+| Email de contact | `src/pages/contact.js`, `contact/index.html`/`en/contact/index.html` | À renseigner |
+| Banque (nom, titulaire, **IBAN**, BIC/SWIFT) | `src/pages/support.js`, `soutenir/index.html`/`en/support/index.html` | À renseigner |
+| **Mobile money** (opérateur, numéro, bénéficiaire) | `src/pages/support.js`, `soutenir/index.html`/`en/support/index.html` | À renseigner |
+| Autre moyen de soutien (nom, URL, devise) | `src/pages/support.js` | À renseigner |
+| Titre, résumé et **book URL** (URL d'achat individuelle) par ouvrage | `src/pages/bibliography.js`, `bibliographie/index.html`/`en/bibliography/index.html` | À renseigner (14 entrées) |
+| Titre, date et **sermon URL** individuelle par prédication | `src/pages/media.js`, `espace-medias/index.html`/`en/media/index.html` | À renseigner (3 entrées) |
 | Images Open Graph 1200×630 (FR/EN) | `public/og/README.md`, `og:image` dans les deux HTML | À renseigner |
 | Mentions légales | Pied de page des deux HTML | À renseigner |
 
