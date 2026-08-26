@@ -16,9 +16,3 @@ if (menuButton && navigation) {
     }
   });
 }
-
-document.querySelectorAll('[data-language-link]').forEach((link) => {
-  const target = new URL(link.href);
-  target.hash = window.location.hash;
-  link.href = target.href;
-});
