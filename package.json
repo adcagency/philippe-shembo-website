@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "assets": "node scripts/optimize-assets.mjs",
+    "build": "node scripts/build-pages.mjs",
     "test": "node --test tests/**/*.test.js",
     "test:e2e": "playwright test",
     "serve": "serve . -l 4173"
