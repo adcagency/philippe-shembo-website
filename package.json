@@ -1,0 +1,17 @@
+{
+  "name": "philippe-shembo-ministry",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "assets": "node scripts/optimize-assets.mjs",
+    "test": "node --test tests/site-content.test.js",
+    "test:e2e": "playwright test",
+    "serve": "serve . -l 4173"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "serve": "^14.2.4",
+    "sharp": "^0.34.3"
+  }
+}

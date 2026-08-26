@@ -1,0 +1,5 @@
+# Replace example.org before production
+User-agent: *
+Allow: /
+
+Sitemap: https://example.org/sitemap.xml
