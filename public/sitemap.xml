@@ -9,9 +9,69 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://example.org/" />
   </url>
   <url>
+    <loc>https://example.org/a-propos/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://example.org/a-propos/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.org/en/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.org/" />
+  </url>
+  <url>
+    <loc>https://example.org/espace-medias/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://example.org/espace-medias/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.org/en/media/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.org/" />
+  </url>
+  <url>
+    <loc>https://example.org/bibliographie/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://example.org/bibliographie/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.org/en/bibliography/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.org/" />
+  </url>
+  <url>
+    <loc>https://example.org/soutenir/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://example.org/soutenir/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.org/en/support/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.org/" />
+  </url>
+  <url>
+    <loc>https://example.org/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://example.org/contact/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.org/en/contact/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.org/" />
+  </url>
+  <url>
     <loc>https://example.org/en/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://example.org/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://example.org/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.org/" />
+  </url>
+  <url>
+    <loc>https://example.org/en/about/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://example.org/a-propos/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.org/en/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.org/" />
+  </url>
+  <url>
+    <loc>https://example.org/en/media/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://example.org/espace-medias/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.org/en/media/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.org/" />
+  </url>
+  <url>
+    <loc>https://example.org/en/bibliography/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://example.org/bibliographie/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.org/en/bibliography/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.org/" />
+  </url>
+  <url>
+    <loc>https://example.org/en/support/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://example.org/soutenir/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.org/en/support/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.org/" />
+  </url>
+  <url>
+    <loc>https://example.org/en/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://example.org/contact/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.org/en/contact/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://example.org/" />
   </url>
 </urlset>
