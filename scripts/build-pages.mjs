@@ -1,5 +1,5 @@
 // scripts/build-pages.mjs
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile, cp } from 'node:fs/promises';
 import path from 'node:path';
 import { renderPage } from '../src/build/render-page.js';
 import { pathFor } from '../src/data/nav-config.js';
@@ -16,11 +16,23 @@ const PAGES = [homePage, aboutPage, mediaPage, bibliographyPage, supportPage, co
 for (const page of PAGES) {
   for (const lang of ['fr', 'en']) {
     const html = renderPage({ lang, pageKey: page.key, ...page[lang] });
-    const outputPath = path.join(root, pathFor(page.key, lang), 'index.html');
-    await mkdir(path.dirname(outputPath), { recursive: true });
-    await writeFile(outputPath, html, 'utf8');
-    console.log(`Wrote ${path.relative(root, outputPath)}`);
+    const relPath = pathFor(page.key, lang);
+    
+    // Write to root
+    const rootPath = path.join(root, relPath, 'index.html');
+    await mkdir(path.dirname(rootPath), { recursive: true });
+    await writeFile(rootPath, html, 'utf8');
+
+    // Write to public/ for Vercel
+    const publicPath = path.join(root, 'public', relPath, 'index.html');
+    await mkdir(path.dirname(publicPath), { recursive: true });
+    await writeFile(publicPath, html, 'utf8');
+
+    console.log(`Wrote ${relPath}`);
   }
 }
+
+// Ensure src/ (styles & scripts) is copied to public/src/
+await cp(path.join(root, 'src'), path.join(root, 'public', 'src'), { recursive: true });
 
 console.log(`Generated ${PAGES.length * 2} pages`);
