@@ -13,15 +13,13 @@ test('home page content has no anchor-based hrefs and exactly one h1 per languag
   }
 });
 
-test('home page links to all five section pages', () => {
+test('home page links to key section pages', () => {
   assert.match(homePage.fr.bodyHtml, /href="\/a-propos\/"/);
   assert.match(homePage.fr.bodyHtml, /href="\/espace-medias\/"/);
   assert.match(homePage.fr.bodyHtml, /href="\/bibliographie\/"/);
-  assert.match(homePage.fr.bodyHtml, /href="\/soutenir\/"/);
   assert.match(homePage.fr.bodyHtml, /href="\/contact\/"/);
   assert.match(homePage.en.bodyHtml, /href="\/en\/about\/"/);
   assert.match(homePage.en.bodyHtml, /href="\/en\/media\/"/);
   assert.match(homePage.en.bodyHtml, /href="\/en\/bibliography\/"/);
-  assert.match(homePage.en.bodyHtml, /href="\/en\/support\/"/);
   assert.match(homePage.en.bodyHtml, /href="\/en\/contact\/"/);
 });

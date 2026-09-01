@@ -12,6 +12,6 @@ test('contact page has one h1 and all four official social links', () => {
     assert.match(page.bodyHtml, /facebook\.com\/PasteurPhilippeShembo/);
     assert.match(page.bodyHtml, /instagram\.com\/pasteur\.philippe\.a\.shembo/);
     assert.match(page.bodyHtml, /linkedin\.com\/in\/philippe-a-shembo-28920733b/);
-    assert.ok(page.bodyHtml.includes('[À renseigner]') || page.bodyHtml.includes('[To be provided]'));
+    assert.match(page.bodyHtml, /mailto:contact@philippeshembo\.com/);
   }
 });

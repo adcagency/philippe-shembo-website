@@ -25,8 +25,10 @@ test('renderHeader brand link points at the home page for the language', () => {
 
 test('renderHeader language links point at the given page in the other language', () => {
   const html = renderHeader({ lang: 'fr', pageKey: 'support' });
-  assert.match(html, /<a href="\/en\/support\/">EN<\/a>/);
-  assert.match(html, /<a href="\/soutenir\/" aria-current="page">FR<\/a>/);
+  assert.match(html, /href="\/en\/support\/"/);
+  assert.match(html, /href="\/soutenir\/" aria-current="page"/);
+  assert.match(html, /lang-dropdown/);
+  assert.match(html, /lang-menu/);
 });
 
 test('renderFooter uses the given cross-language path, not a hash', () => {

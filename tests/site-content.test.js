@@ -6,13 +6,14 @@ import { SITE_CONTENT } from '../src/data/site-content.js';
 test('content contains only official social URLs and explicit unfinished values', () => {
   assert.equal(SITE_CONTENT.social.youtube, 'https://www.youtube.com/@andyphilippeshembo');
   assert.equal(SITE_CONTENT.books.length, 14);
-  assert.equal(SITE_CONTENT.support.bank.iban, '[À renseigner]');
-  assert.equal(SITE_CONTENT.contact.email, '[À renseigner]');
+  assert.equal(SITE_CONTENT.support.bank.iban, 'À venir');
+  assert.equal(SITE_CONTENT.contact.email, 'contact@philippeshembo.com');
 });
 
-test('support and book placeholders remain explicit until an editor changes them', () => {
-  assert.ok(SITE_CONTENT.books.every((book) => book.url === '[À renseigner]'));
-  assert.equal(SITE_CONTENT.support.mobileMoney.number, '[À renseigner]');
+test('support and book purchase URLs remain explicit until an editor changes them', () => {
+  assert.ok(SITE_CONTENT.books.every((book) => book.url === 'À venir'));
+  assert.ok(SITE_CONTENT.books.every((book) => book.title !== 'À venir'));
+  assert.equal(SITE_CONTENT.support.mobileMoney.number, 'À venir');
 });
 
 test('editor checklist names every production-only value', async () => {
