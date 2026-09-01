@@ -20,6 +20,8 @@ test('nav config has exactly the five section pages with fr/en paths', () => {
 test('pathFor resolves home and section pages, and throws on an unknown key', () => {
   assert.equal(pathFor('home', 'fr'), '/');
   assert.equal(pathFor('home', 'en'), '/en/');
+  assert.equal(pathFor('legal', 'fr'), '/mentions-legales/');
+  assert.equal(pathFor('legal', 'en'), '/en/legal/');
   assert.equal(pathFor('about', 'fr'), '/a-propos/');
   assert.equal(pathFor('about', 'en'), '/en/about/');
   assert.throws(() => pathFor('nope', 'fr'));

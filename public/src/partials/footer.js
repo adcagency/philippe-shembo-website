@@ -5,7 +5,8 @@ const COPY = {
   fr: {
     rights: '© 2026 Philippe A. Shembo. Tous droits réservés.',
     switchLabel: 'English version',
-    legal: 'Mentions légales à renseigner',
+    legal: 'Mentions légales & Confidentialité',
+    legalPath: '/mentions-legales/',
     homeLabel: 'Accueil',
     socialLabel: 'Réseaux sociaux officiels',
     brandLabel: 'Accueil Philippe A. Shembo'
@@ -13,7 +14,8 @@ const COPY = {
   en: {
     rights: '© 2026 Philippe A. Shembo. All rights reserved.',
     switchLabel: 'Version française',
-    legal: 'Legal notice to be provided',
+    legal: 'Legal Notice & Privacy',
+    legalPath: '/en/legal/',
     homeLabel: 'Home',
     socialLabel: 'Official social media channels',
     brandLabel: 'Philippe A. Shembo Home'
@@ -61,7 +63,7 @@ export function renderFooter({ lang, otherLangPath }) {
         <p class="footer-links">
           <a href="${otherLangPath}">${copy.switchLabel}</a>
           <span class="footer-sep" aria-hidden="true">·</span>
-          <span class="footer-legal">${copy.legal}</span>
+          <a class="footer-legal" href="${copy.legalPath}">${copy.legal}</a>
         </p>
       </div>
     </div></footer>`;

@@ -9,9 +9,10 @@ import { mediaPage } from '../src/pages/media.js';
 import { bibliographyPage } from '../src/pages/bibliography.js';
 import { supportPage } from '../src/pages/support.js';
 import { contactPage } from '../src/pages/contact.js';
+import { legalPage } from '../src/pages/legal.js';
 
 const root = process.cwd();
-const PAGES = [homePage, aboutPage, mediaPage, bibliographyPage, supportPage, contactPage];
+const PAGES = [homePage, aboutPage, mediaPage, bibliographyPage, supportPage, contactPage, legalPage];
 
 for (const page of PAGES) {
   for (const lang of ['fr', 'en']) {

@@ -1,4 +1,5 @@
 export const HOME_PATH = { fr: '/', en: '/en/' };
+export const LEGAL_PATH = { fr: '/mentions-legales/', en: '/en/legal/' };
 
 export const NAV_ITEMS = [
   { key: 'about', fr: { label: 'À Propos', path: '/a-propos/' }, en: { label: 'About', path: '/en/about/' } },
@@ -10,6 +11,7 @@ export const NAV_ITEMS = [
 
 export function pathFor(pageKey, lang) {
   if (pageKey === 'home') return HOME_PATH[lang];
+  if (pageKey === 'legal') return LEGAL_PATH[lang];
   const item = NAV_ITEMS.find((entry) => entry.key === pageKey);
   if (!item) throw new Error(`Unknown pageKey: ${pageKey}`);
   return item[lang].path;

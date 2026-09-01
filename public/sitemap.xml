@@ -63,6 +63,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://example.org/" />
   </url>
   <url>
+    <loc>https://example.org/mentions-legales/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://example.org/mentions-legales/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.org/en/legal/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.org/" />
+  </url>
+  <url>
     <loc>https://example.org/en/support/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://example.org/soutenir/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://example.org/en/support/" />
@@ -72,6 +78,12 @@
     <loc>https://example.org/en/contact/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://example.org/contact/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://example.org/en/contact/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.org/" />
+  </url>
+  <url>
+    <loc>https://example.org/en/legal/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://example.org/mentions-legales/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.org/en/legal/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://example.org/" />
   </url>
 </urlset>

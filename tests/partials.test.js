@@ -34,5 +34,10 @@ test('renderHeader language links point at the given page in the other language'
 test('renderFooter uses the given cross-language path, not a hash', () => {
   const html = renderFooter({ lang: 'fr', otherLangPath: '/en/contact/' });
   assert.match(html, /<a href="\/en\/contact\/">English version<\/a>/);
+  assert.match(html, /<a class="footer-legal" href="\/mentions-legales\/">Mentions légales & Confidentialité<\/a>/);
   assert.doesNotMatch(html, /data-language-link/);
+
+  const htmlEn = renderFooter({ lang: 'en', otherLangPath: '/contact/' });
+  assert.match(htmlEn, /<a href="\/contact\/">Version française<\/a>/);
+  assert.match(htmlEn, /<a class="footer-legal" href="\/en\/legal\/">Legal Notice & Privacy<\/a>/);
 });
