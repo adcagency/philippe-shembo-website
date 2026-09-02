@@ -2,9 +2,9 @@ export const homePage = {
   key: 'home',
   fr: {
     title: 'Philippe A. Shembo | Ministère, prédications et ouvrages',
-    description: 'Découvrez le ministère, les prédications et les ouvrages de Philippe A. Shembo, pasteur, auteur et formateur.',
+    description: 'Découvrez le ministère, les prédications vidéo et les ouvrages de l’Apôtre Philippe A. Shembo. Églises Grâce Déployée, Assemblées Chrétiennes au Maroc et en RDC.',
     ogTitle: 'Philippe A. Shembo | Ministère, prédications et ouvrages',
-    ogDescription: 'Découvrez le ministère, les prédications et les ouvrages de Philippe A. Shembo.',
+    ogDescription: 'Découvrez le ministère, les prédications vidéo et les ouvrages de l’Apôtre Philippe A. Shembo.',
     bodyHtml: `      <section class="hero hero--pure"><div class="shell hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Pasteur · Auteur · Formateur</p>
@@ -13,7 +13,7 @@ export const homePage = {
         </div>
         <figure class="hero-portrait">
           <div class="hero-portrait-frame">
-            <img src="/assets/portraits/philippe-shembo-hero.webp" width="667" height="1000" alt="Portrait du Pasteur Philippe A. Shembo" decoding="async">
+            <img src="/assets/portraits/philippe-shembo-hero.webp" width="667" height="1000" alt="Portrait du Pasteur Philippe A. Shembo" decoding="async" fetchpriority="high">
           </div>
         </figure>
       </div></section>
@@ -131,9 +131,9 @@ export const homePage = {
   },
   en: {
     title: 'Philippe A. Shembo | Ministry, sermons and books',
-    description: 'Discover the ministry, sermons and books of Philippe A. Shembo, pastor, author and trainer.',
+    description: 'Discover the ministry, video sermons and books by Apostle Philippe A. Shembo. Grâce Déployée churches, Christian Assemblies in Morocco, DRC and worldwide.',
     ogTitle: 'Philippe A. Shembo | Ministry, sermons and books',
-    ogDescription: 'Discover the ministry, sermons and books of Philippe A. Shembo.',
+    ogDescription: 'Discover the ministry, video sermons and books by Apostle Philippe A. Shembo.',
     bodyHtml: `      <section class="hero hero--pure"><div class="shell hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Pastor · Author · Trainer</p>
@@ -142,7 +142,7 @@ export const homePage = {
         </div>
         <figure class="hero-portrait">
           <div class="hero-portrait-frame">
-            <img src="/assets/portraits/philippe-shembo-hero.webp" width="667" height="1000" alt="Portrait of Pastor Philippe A. Shembo" decoding="async">
+            <img src="/assets/portraits/philippe-shembo-hero.webp" width="667" height="1000" alt="Portrait of Pastor Philippe A. Shembo" decoding="async" fetchpriority="high">
           </div>
         </figure>
       </div></section>

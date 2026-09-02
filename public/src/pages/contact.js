@@ -1,10 +1,10 @@
 export const contactPage = {
   key: 'contact',
   fr: {
-    title: 'Philippe A. Shembo | Contact',
-    description: 'Contactez le ministère de Philippe A. Shembo pour toute demande officielle ou pastorale.',
-    ogTitle: 'Philippe A. Shembo | Contact',
-    ogDescription: 'Contactez le ministère de Philippe A. Shembo pour toute demande officielle ou pastorale.',
+    title: 'Contact | Ministère de l’Apôtre Philippe A. Shembo',
+    description: 'Contactez le ministère de l’Apôtre Philippe A. Shembo pour vos invitations, conférences, questions pastorales ou demandes officielles.',
+    ogTitle: 'Contact | Ministère de l’Apôtre Philippe A. Shembo',
+    ogDescription: 'Contactez le ministère de l’Apôtre Philippe A. Shembo pour vos invitations, conférences ou demandes officielles.',
     bodyHtml: `      <section class="section section--sand"><div class="shell">
         <div class="contact-box">
           <p class="eyebrow">Contact</p>
@@ -36,10 +36,10 @@ export const contactPage = {
       </div></section>`
   },
   en: {
-    title: 'Philippe A. Shembo | Contact',
-    description: "Contact Philippe A. Shembo's ministry for official inquiries or pastoral questions.",
-    ogTitle: 'Philippe A. Shembo | Contact',
-    ogDescription: "Contact Philippe A. Shembo's ministry for official inquiries or pastoral questions.",
+    title: 'Contact | Apostle Philippe A. Shembo’s Ministry',
+    description: 'Contact Apostle Philippe A. Shembo’s ministry for speaking invitations, conferences, pastoral questions or official inquiries.',
+    ogTitle: 'Contact | Apostle Philippe A. Shembo’s Ministry',
+    ogDescription: 'Contact Apostle Philippe A. Shembo’s ministry for speaking invitations, conferences or official inquiries.',
     bodyHtml: `      <section class="section section--sand"><div class="shell">
         <div class="contact-box">
           <p class="eyebrow">Contact</p>

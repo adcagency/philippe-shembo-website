@@ -14,10 +14,12 @@ test('renderPage produces a full document with correct lang, canonical and hrefl
   const html = renderPage({ lang: 'fr', pageKey: 'about', ...base });
   assert.match(html, /^<!doctype html>/);
   assert.match(html, /<html lang="fr">/);
-  assert.match(html, /<link rel="canonical" href="https:\/\/example\.org\/a-propos\/">/);
-  assert.match(html, /<link rel="alternate" hreflang="fr" href="https:\/\/example\.org\/a-propos\/">/);
-  assert.match(html, /<link rel="alternate" hreflang="en" href="https:\/\/example\.org\/en\/about\/">/);
-  assert.match(html, /<link rel="alternate" hreflang="x-default" href="https:\/\/example\.org\/">/);
+  assert.match(html, /<link rel="canonical" href="https:\/\/philippeshembo\.com\/a-propos\/">/);
+  assert.match(html, /<link rel="alternate" hreflang="fr" href="https:\/\/philippeshembo\.com\/a-propos\/">/);
+  assert.match(html, /<link rel="alternate" hreflang="en" href="https:\/\/philippeshembo\.com\/en\/about\/">/);
+  assert.match(html, /<link rel="alternate" hreflang="x-default" href="https:\/\/philippeshembo\.com\/a-propos\/">/);
+  assert.match(html, /<link rel="preconnect" href="https:\/\/fonts\.googleapis\.com">/);
+  assert.match(html, /<link rel="stylesheet" href="https:\/\/fonts\.googleapis\.com\/css2\?family=/);
   assert.match(html, /<title>Titre de test<\/title>/);
   assert.match(html, /<section><h1>Contenu<\/h1><\/section>/);
   assert.match(html, /src="\/src\/scripts\/site\.js"/);
@@ -25,11 +27,15 @@ test('renderPage produces a full document with correct lang, canonical and hrefl
 
 test('renderPage resolves the home page path correctly', () => {
   const html = renderPage({ lang: 'en', pageKey: 'home', ...base });
-  assert.match(html, /<link rel="canonical" href="https:\/\/example\.org\/en\/">/);
+  assert.match(html, /<link rel="canonical" href="https:\/\/philippeshembo\.com\/en\/">/);
+  assert.match(html, /<link rel="alternate" hreflang="x-default" href="https:\/\/philippeshembo\.com\/">/);
 });
 
 test('renderPage embeds a Person JSON-LD block using the official social URLs', () => {
   const html = renderPage({ lang: 'fr', pageKey: 'contact', ...base });
   assert.match(html, /"@type":"Person"/);
   assert.match(html, /https:\/\/www\.youtube\.com\/@andyphilippeshembo/);
+  assert.match(html, /"@type":"WebSite"/);
+  assert.match(html, /"@type":"BreadcrumbList"/);
 });
+
