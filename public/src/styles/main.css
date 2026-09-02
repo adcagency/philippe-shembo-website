@@ -1365,32 +1365,51 @@ button, a {
 
 /* Contact Box */
 .contact-box {
-  padding: 3rem;
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 3.5rem 3rem;
   background: var(--violet-dark);
   color: var(--paper);
   border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.contact-box .eyebrow {
+  text-align: center;
+  margin-bottom: 0.6rem;
 }
 
 .contact-box h1 {
   margin: 0 0 1rem;
   font: 700 clamp(2.2rem, 5vw, 3.6rem)/1.08 var(--serif);
+  text-align: center;
 }
 
-.contact-box p {
-  max-width: 42rem;
+.contact-box .section-intro {
+  max-width: 36rem;
+  margin: 0 auto 2rem;
   font-size: 1.08rem;
   color: #DDD6E3;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.contact-box .section-intro a {
+  color: var(--paper);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* Contact Form */
 .contact-form {
-  margin-top: 2.5rem;
-  max-width: 42rem;
+  margin: 2rem auto 0;
+  max-width: 36rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.4rem;
+  text-align: left;
 }
 
 .form-group {
@@ -1439,12 +1458,24 @@ button, a {
 .form-note {
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.5);
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
+  text-align: center;
 }
 
 .contact-form .button {
-  align-self: flex-start;
+  align-self: center;
+  min-width: 220px;
+  text-align: center;
   margin-top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .contact-box {
+    padding: 2.5rem 1.5rem;
+  }
+  .contact-form .button {
+    width: 100%;
+  }
 }
 
 .socials {
@@ -1619,15 +1650,22 @@ button, a {
   gap: 2rem;
 }
 
+.home-community-section {
+  text-align: center;
+}
+
 .community-card {
-  padding: 2.5rem;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 3.5rem 2.5rem;
   border-radius: var(--radius-lg);
   border: 1px solid var(--line);
   background: var(--paper);
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   transition: var(--transition);
 }
 
@@ -1636,16 +1674,17 @@ button, a {
   box-shadow: var(--shadow-md);
 }
 
-.community-card h2 {
+.community-card .section-title {
   margin: 0 0 0.8rem;
-  color: var(--violet-dark);
-  font: 700 1.6rem/1.2 var(--serif);
+  text-align: center;
 }
 
-.community-card p {
-  margin: 0 0 1.5rem;
+.community-card .section-intro {
+  max-width: 36rem;
+  margin: 0 auto 2rem;
+  text-align: center;
   color: var(--muted);
-  font-size: 1.02rem;
+  font-size: 1.05rem;
 }
 
 .community-card--accent {
@@ -1656,8 +1695,15 @@ button, a {
 .social-pills {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 0.75rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.community-cta {
+  margin: 0;
+  text-align: center;
 }
 
 .social-pills a {
