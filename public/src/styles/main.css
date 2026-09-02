@@ -824,7 +824,7 @@ button, a {
 .about-family-grid {
   display: grid;
   gap: clamp(2.5rem, 5vw, 4.5rem);
-  align-items: center;
+  align-items: start;
 }
 
 .family-portrait-figure {
@@ -866,6 +866,7 @@ button, a {
 
 .about-copy {
   max-width: 44rem;
+  padding-top: 1.25rem;
 }
 
 .about-copy .section-title {
@@ -877,6 +878,18 @@ button, a {
   font-size: 1.05rem;
   line-height: 1.8;
   margin-bottom: 1.25rem;
+}
+
+.about-copy a {
+  color: var(--violet-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.about-copy a:hover {
+  color: var(--violet);
 }
 
 .about-copy p:last-child {
