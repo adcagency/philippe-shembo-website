@@ -1384,6 +1384,69 @@ button, a {
   color: #DDD6E3;
 }
 
+/* Contact Form */
+.contact-form {
+  margin-top: 2.5rem;
+  max-width: 42rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--paper);
+}
+
+.form-group label span {
+  color: #DDD6E3;
+  opacity: 0.7;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--paper);
+  font-family: var(--sans);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.form-note {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 0.5rem;
+}
+
+.contact-form .button {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
 .socials {
   display: flex;
   flex-wrap: wrap;
