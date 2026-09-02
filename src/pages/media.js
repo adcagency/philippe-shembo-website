@@ -7,7 +7,6 @@ export const mediaPage = {
     ogDescription: 'Retrouvez l’ensemble des prédications, enseignements et séries vidéo de l’Apôtre Philippe A. Shembo.',
     bodyHtml: `      <section class="section section--violet"><div class="shell">
         <div class="section-header text-center reveal-on-scroll">
-          <p class="eyebrow">Espace Médias</p>
           <h1 class="section-title">Prédications, Enseignements &amp; Messages</h1>
           <p class="section-intro">Nourrissez votre foi avec les messages inspirés et les séries d'édification de l’Apôtre Philippe A. Shembo.</p>
         </div>
@@ -109,7 +108,6 @@ export const mediaPage = {
     ogDescription: "Watch all sermons, teachings, and video series by Apostle Philippe A. Shembo.",
     bodyHtml: `      <section class="section section--violet"><div class="shell">
         <div class="section-header text-center reveal-on-scroll">
-          <p class="eyebrow">Media Center</p>
           <h1 class="section-title">Sermons, Teachings &amp; Messages</h1>
           <p class="section-intro">Nourish your faith with inspired teachings and video series by Apostle Philippe A. Shembo.</p>
         </div>

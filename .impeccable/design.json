@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-02T13:34:00Z",
+  "title": "Design System: Philippe A. Shembo Ministry",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Imperial Royal Violet",
+        "canonical": "#4B0082",
+        "tonalRamp": ["#160029", "#22003D", "#35005E", "#4B0082", "#6B1D9E", "#8C34C7", "#BA77E6", "#E8D1F7"]
+      },
+      "primary-dark": {
+        "role": "primary",
+        "displayName": "Midnight Violet",
+        "canonical": "#22003D",
+        "tonalRamp": ["#0E001A", "#160029", "#22003D", "#35005E", "#4B0082", "#6B1D9E", "#9A50D6", "#E2DAE8"]
+      },
+      "accent-gold": {
+        "role": "secondary",
+        "displayName": "Champagne Gold",
+        "canonical": "#D4AF37",
+        "tonalRamp": ["#544310", "#856A19", "#B59022", "#D4AF37", "#E5C358", "#F2E3B3", "#F9F2D9", "#FDFBF5"]
+      },
+      "sand": {
+        "role": "neutral",
+        "displayName": "Natural Sand Paper",
+        "canonical": "#F8F6F2",
+        "tonalRamp": ["#36332E", "#666056", "#A19B8F", "#D4CEC4", "#ECE8E1", "#F8F6F2", "#FCFBF9", "#FFFFFF"]
+      },
+      "neutral-ink": {
+        "role": "neutral",
+        "displayName": "Midnight Ink",
+        "canonical": "#1A1625",
+        "tonalRamp": ["#0D0B12", "#1A1625", "#2E283E", "#453D5B", "#62597D", "#8981A3", "#BDB7CE", "#F0EEF5"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Cormorant Garamond Display Serif",
+        "purpose": "Hero statements, elegant contrast section headlines, and citations."
+      },
+      "headline": {
+        "displayName": "Cormorant Garamond Headline Serif",
+        "purpose": "Primary section titles across pages."
+      },
+      "body": {
+        "displayName": "Plus Jakarta Sans Geometric Sans",
+        "purpose": "Readable geometric sans for prose, biography, and metadata."
+      },
+      "label": {
+        "displayName": "Cinzel Classical Serif",
+        "purpose": "Sculpted uppercase category markers and section tags."
+      }
+    },
+    "shadows": [
+      {
+        "name": "subtle-rest",
+        "value": "0 4px 12px rgba(26, 22, 37, 0.06)",
+        "purpose": "Default rest elevation for cards and quote containers."
+      },
+      {
+        "name": "hover-lift",
+        "value": "0 10px 30px rgba(26, 22, 37, 0.1)",
+        "purpose": "Interactive lift state for clickable cards."
+      },
+      {
+        "name": "prominent-focal",
+        "value": "0 20px 48px rgba(26, 22, 37, 0.16)",
+        "purpose": "Deep shadow for focal elements and modal navigation."
+      },
+      {
+        "name": "shadow-gold",
+        "value": "0 0 30px rgba(212, 175, 55, 0.25)",
+        "purpose": "Sacred ambient glow for gold-accented frames."
+      }
+    ],
+    "motion": [
+      {
+        "name": "transition-standard",
+        "value": "all 0.25s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Smooth response for hover, focus, and state transitions."
+      }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "680px" },
+      { "name": "desktop", "value": "960px" },
+      { "name": "wide", "value": "1200px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "High-prominence gold CTA for key conversions (e.g. Soutenir le ministère, Contacter).",
+      "html": "<button class=\"ds-btn-primary\">Soutenir le ministère</button>",
+      "css": ".ds-btn-primary { display: inline-flex; min-height: 52px; align-items: center; justify-content: center; padding: 0.85rem 1.6rem; border: 1px solid #D4AF37; border-radius: 6px; background: linear-gradient(135deg, #E5C358 0%, #D4AF37 100%); color: #1A1625; font-family: Lato, Arial, sans-serif; font-weight: 800; font-size: 1.02rem; text-decoration: none; cursor: pointer; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover { transform: translateY(-3px); background: linear-gradient(135deg, #F3E098 0%, #E5C358 100%); box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45); }"
+    },
+    {
+      "name": "Ghost Button (Dark)",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action on dark violet sections and hero.",
+      "html": "<button class=\"ds-btn-ghost\">Découvrir le ministère</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; min-height: 52px; align-items: center; justify-content: center; padding: 0.85rem 1.6rem; border: 1px solid rgba(255, 255, 255, 0.6); border-radius: 6px; background: rgba(255, 255, 255, 0.04); color: #FFFFFF; font-family: Lato, Arial, sans-serif; font-weight: 800; font-size: 1.02rem; text-decoration: none; cursor: pointer; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-ghost:hover { background: #FFFFFF; color: #22003D; border-color: #FFFFFF; transform: translateY(-3px); }"
+    },
+    {
+      "name": "Overview Card",
+      "kind": "card",
+      "refersTo": "card-overview",
+      "description": "Structured card for ministry pillars and navigational pathways.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-eyebrow\">MINISTÈRE</div><h3 class=\"ds-card-title\">Églises Grâce Déployée</h3><p class=\"ds-card-text\">Implantation et accompagnement de communautés chrétiennes vivantes et engagées.</p><a class=\"ds-card-link\" href=\"#\">En savoir plus &rarr;</a></div>",
+      "css": ".ds-card { display: flex; flex-direction: column; padding: 2rem; border: 1px solid #E3DDD5; border-radius: 12px; background: #FFFFFF; box-shadow: 0 4px 12px rgba(26, 22, 37, 0.06); font-family: Lato, Arial, sans-serif; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); } .ds-card:hover { transform: translateY(-4px); border-color: rgba(212, 175, 55, 0.6); box-shadow: 0 10px 30px rgba(26, 22, 37, 0.1); } .ds-card-eyebrow { font-family: Antonio, Arial, sans-serif; font-weight: 700; font-size: 0.88rem; color: #4B0082; text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 0.5rem; } .ds-card-title { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 1.4rem; color: #22003D; margin: 0 0 0.6rem; } .ds-card-text { color: #575260; font-size: 1.02rem; line-height: 1.6; margin: 0 0 1.5rem; flex-grow: 1; } .ds-card-link { font-weight: 800; color: #4B0082; text-decoration: none; font-size: 0.98rem; }"
+    },
+    {
+      "name": "Social Pill",
+      "kind": "chip",
+      "refersTo": "social-pill",
+      "description": "Rounded social network pill button.",
+      "html": "<a class=\"ds-pill\" href=\"#\">YouTube</a>",
+      "css": ".ds-pill { display: inline-flex; align-items: center; padding: 0.45rem 1rem; border-radius: 20px; border: 1px solid rgba(75, 0, 130, 0.25); background: #F8F6F2; color: #22003D; font-family: Lato, Arial, sans-serif; font-weight: 700; font-size: 0.92rem; text-decoration: none; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); } .ds-pill:hover { background: #22003D; color: #FFFFFF; border-color: #22003D; transform: translateY(-2px); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Pastoral Sanctuary",
+    "overview": "The visual language balances sacred dignity, intellectual depth, and warm accessibility. It avoids the flashiness and aggressive commercialism of modern televangelism in favor of an enduring, bookish elegance worthy of an apostolic teacher and author.\n\nDeep royal violet surfaces evoke spiritual depth and solemnity, balanced by warm, tactile sand and crisp paper canvases. Champagne gold acts as a deliberate accent—bringing light and focus to key calls-to-action, badges, and portrait frames without descending into ostentation.",
+    "keyCharacteristics": [
+      "Noble color harmony: deep imperial violet grounded by natural sand and refined gold.",
+      "Stately typography: majestic Cormorant Garamond editorial serif headings paired with clean, highly legible Plus Jakarta Sans body text and refined Cinzel section tags.",
+      "Tactile and refined depth: soft ambient shadows, gentle golden glows on interactive focus, and smooth 250ms spring transitions.",
+      "Uncompromising truthfulness: strict use of clear placeholders ([À renseigner]) for unconfirmed data, avoiding fabricated claims or artificial hype."
+    ],
+    "rules": [
+      {
+        "name": "The Gold Rarity Rule",
+        "body": "Champagne gold is an accent and sacred highlight; it occupies ≤10% of any surface and is never used as body text on light backgrounds due to contrast requirements.",
+        "section": "colors"
+      },
+      {
+        "name": "The Section Alternation Rule",
+        "body": "Long-form content flows between warm light sections (--sand, --paper) and resonant dark violet sections (--violet-dark) to establish clear rhythm without visual fatigue.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tri-Type Distinction Rule",
+        "body": "Never mix the roles of the three type families: Cinzel is strictly for uppercase labels, Cormorant Garamond strictly for headings/quotes, and Plus Jakarta Sans for all body copy and metadata.",
+        "section": "typography"
+      },
+      {
+        "name": "The Rest-to-Lift Rule",
+        "body": "Cards and buttons rest on hairline borders with minimal elevation, lifting -3px to -5px with deepened shadows and intensified gold borders only upon active user hover.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do maintain strict WCAG AA contrast (≥4.5:1 for body copy, ≥3:1 for graphical UI elements).",
+      "Do preserve the exact placeholder string [À renseigner] for unconfirmed bank, contact, or book details.",
+      "Do keep animations crisp and bounded between 200ms and 250ms with cubic-bezier(0.16, 1, 0.3, 1).",
+      "Do ensure 100% feature and visual parity between French and English page mirrors.",
+      "Do respect prefers-reduced-motion across all transitions and transforms."
+    ],
+    "donts": [
+      "Don't use gold (#D4AF37) as body text color on white or sand backgrounds.",
+      "Don't introduce carousels, auto-playing videos, or ticker counters into the hero.",
+      "Don't fabricate testimonials, partner logos, sermons, or statistical metrics.",
+      "Don't add client-side JavaScript that blocks rendering or hides indexable HTML content.",
+      "Don't alter the original assets under Ressources/; always generate optimized WebP derivatives into public/assets/."
+    ]
+  }
+}
