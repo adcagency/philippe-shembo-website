@@ -189,7 +189,51 @@ button, a {
   color: #DDD6E3;
 }
 
-/* Header & Navigation Bar */
+/* --- ANNOUNCEMENT BAR --- */
+.announcement-bar {
+  background-color: var(--violet-dark);
+  text-align: center;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  font-family: var(--sans);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.announcement-bar a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.announcement-bar a:hover {
+  opacity: 0.8;
+}
+
+.announcement-text {
+  font-weight: 400;
+}
+
+.announcement-cta {
+  font-weight: 600;
+  color: var(--paper);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .announcement-bar a {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+}
+
+/* --- HEADER --- */
 .site-header {
   position: sticky;
   z-index: 50;
@@ -229,13 +273,16 @@ button, a {
 }
 
 .menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
   min-height: 44px;
+  padding: 0;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-sm);
   background: transparent;
   color: var(--paper);
-  font: 600 0.92rem var(--sans);
   cursor: pointer;
   transition: var(--transition);
 }
@@ -243,6 +290,29 @@ button, a {
 .menu-button:hover {
   border-color: rgba(255, 255, 255, 0.35);
   background: rgba(255, 255, 255, 0.06);
+}
+
+.hamburger {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+.hamburger .line {
+  transform-origin: center;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+}
+
+.menu-button[aria-expanded="true"] .line-top {
+  transform: translateY(5.25px) rotate(45deg);
+}
+
+.menu-button[aria-expanded="true"] .line-middle {
+  opacity: 0;
+}
+
+.menu-button[aria-expanded="true"] .line-bottom {
+  transform: translateY(-5.25px) rotate(-45deg);
 }
 
 .site-nav {
@@ -309,13 +379,12 @@ button, a {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.4rem 0.85rem;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  color: var(--paper);
+  padding: 0.4rem 0.6rem;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
   cursor: pointer;
-  font: 600 0.85rem var(--sans);
+  font: 500 0.9rem var(--sans);
   transition: var(--transition);
   list-style: none;
   user-select: none;
@@ -326,8 +395,7 @@ button, a {
 }
 
 .lang-summary:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
 }
 
 .lang-caret {

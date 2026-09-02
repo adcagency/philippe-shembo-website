@@ -53,10 +53,7 @@ const size = 512;
 const radius = 100;
 const svgBg = Buffer.from(
   `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">` +
-  `<defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">` +
-  `<stop offset="0%" stop-color="#22003D" /><stop offset="100%" stop-color="#160029" />` +
-  `</linearGradient></defs>` +
-  `<rect x="8" y="8" width="${size - 16}" height="${size - 16}" rx="${radius}" ry="${radius}" fill="url(#grad)" stroke="#D4AF37" stroke-width="12" />` +
+  `<rect x="0" y="0" width="${size}" height="${size}" rx="112" ry="112" fill="#1E0038" />` +
   `</svg>`
 );
 
@@ -76,13 +73,7 @@ for (const dir of faviconOutputs) {
 
 // Generate SVG favicon as well
 const svgFaviconContent = `<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <defs>
-    <linearGradient id="fav-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#22003D" />
-      <stop offset="100%" stop-color="#160029" />
-    </linearGradient>
-  </defs>
-  <rect x="8" y="8" width="496" height="496" rx="100" ry="100" fill="url(#fav-bg)" stroke="#D4AF37" stroke-width="12" />
+  <rect x="0" y="0" width="512" height="512" rx="112" ry="112" fill="#1E0038" />
   <image href="data:image/png;base64,${pasMarkBuffer.toString('base64')}" x="36" y="36" width="440" height="440" />
 </svg>`;
 

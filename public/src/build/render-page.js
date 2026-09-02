@@ -43,7 +43,17 @@ export function renderPage({ lang, pageKey, title, description, ogTitle, ogDescr
     <link rel="alternate" hreflang="fr" href="${SITE_ORIGIN}${frPath}">
     <link rel="alternate" hreflang="en" href="${SITE_ORIGIN}${enPath}">
     <link rel="alternate" hreflang="x-default" href="${SITE_ORIGIN}${HOME_PATH.fr}">
-    <meta property="og:type" content="website"><meta property="og:locale" content="${ogLocale}"><meta property="og:title" content="${ogTitle}"><meta property="og:description" content="${ogDescription}"><meta property="og:url" content="${canonical}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="${ogLocale}">
+    <meta property="og:site_name" content="Apôtre Philippe A. Shembo">
+    <meta property="og:title" content="${ogTitle}">
+    <meta property="og:description" content="${ogDescription}">
+    <meta property="og:url" content="${canonical}">
+    <meta property="og:image" content="${SITE_ORIGIN}/assets/portraits/philippe-shembo-hero.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${ogTitle}">
+    <meta name="twitter:description" content="${ogDescription}">
+    <meta name="twitter:image" content="${SITE_ORIGIN}/assets/portraits/philippe-shembo-hero.webp">
     <link rel="stylesheet" href="/src/styles/main.css">
     <script type="application/ld+json">${jsonLdPerson(lang)}</script>
   </head>

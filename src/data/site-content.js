@@ -3,7 +3,8 @@ export const SITE_CONTENT = {
     facebook: 'https://www.facebook.com/PasteurPhilippeShembo',
     instagram: 'https://www.instagram.com/pasteur.philippe.a.shembo/',
     linkedin: 'https://www.linkedin.com/in/philippe-a-shembo-28920733b/',
-    youtube: 'https://www.youtube.com/@andyphilippeshembo'
+    youtube: 'https://www.youtube.com/@andyphilippeshembo',
+    whatsapp: 'https://chat.whatsapp.com/votre_lien_whatsapp_ici'
   },
   books: [
     {
