@@ -38,7 +38,7 @@ for (const [sourceRelative, outputRelative] of assets) {
     const output = path.join(outDir, outputRelative);
     await mkdir(path.dirname(output), { recursive: true });
     await cp(source, output);
-    await sharp(source).webp({ quality: 84 }).toFile(output.replace(/\.(png|jpe?g)$/i, '.webp'));
+    await sharp(source).webp({ quality: 80, effort: 6 }).toFile(output.replace(/\.(png|jpe?g)$/i, '.webp'));
   }
 }
 

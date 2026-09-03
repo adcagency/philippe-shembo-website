@@ -39,8 +39,9 @@ if (langDropdown) {
 }
 
 /* Scroll reveal animation (IntersectionObserver) */
+const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const revealElements = document.querySelectorAll('.reveal-on-scroll');
-if (revealElements.length > 0 && 'IntersectionObserver' in window) {
+if (revealElements.length > 0 && 'IntersectionObserver' in window && !prefersReducedMotion) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, idx) => {
       if (entry.isIntersecting) {
@@ -62,12 +63,19 @@ const showMoreBtn = document.querySelector('[data-show-more]');
 if (showMoreBtn) {
   showMoreBtn.addEventListener('click', () => {
     const hiddenBooks = document.querySelectorAll('[data-book-hidden]');
+    let firstRevealedBook = null;
     hiddenBooks.forEach((book, idx) => {
       book.style.display = '';
       book.removeAttribute('data-book-hidden');
+      if (!firstRevealedBook && (book.tagName === 'A' || book.querySelector('a'))) {
+        firstRevealedBook = book.tagName === 'A' ? book : book.querySelector('a');
+      }
       setTimeout(() => book.classList.add('revealed'), idx * 100);
     });
     const wrap = document.querySelector('[data-show-more-wrap]');
     if (wrap) wrap.remove();
+    if (firstRevealedBook) {
+      firstRevealedBook.focus();
+    }
   });
 }

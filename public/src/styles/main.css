@@ -3,9 +3,10 @@
   --violet-dark: #1E0038;
   --violet-deep: #120024;
   --violet-light: #5C158C;
-  --gold: #C5A059;
-  --gold-light: #EFE7D3;
-  --gold-dark: #9E7B36;
+  --gold: #D4AF37;
+  --gold-hover: #C5A028;
+  --gold-light: #F2E3B3;
+  --gold-dark: #B59022;
   --sand: #F7F5F0;
   --sand-muted: #EBE7DE;
   --ink: #16131D;
@@ -44,6 +45,10 @@ html {
   scroll-padding-top: 5rem;
 }
 
+@view-transition {
+  navigation: auto;
+}
+
 ::selection {
   background: var(--violet);
   color: var(--paper);
@@ -78,6 +83,19 @@ button, a {
 
 :focus-visible {
   outline: 2px solid var(--violet);
+  outline-offset: 3px;
+}
+
+main:focus {
+  outline: none;
+}
+
+.site-header :focus-visible,
+.announcement-bar :focus-visible,
+.section--violet :focus-visible,
+.site-footer :focus-visible,
+.contact-box :focus-visible {
+  outline: 2px solid #FFFFFF;
   outline-offset: 3px;
 }
 
@@ -187,14 +205,26 @@ button, a {
   color: #DDD6E3;
 }
 
+.section--violet .button:not(.button--ghost):not(.button--outline) {
+  background: var(--paper);
+  color: var(--violet-dark);
+  border-color: var(--paper);
+}
+
+.section--violet .button:not(.button--ghost):not(.button--outline):hover {
+  background: var(--sand);
+  border-color: var(--sand);
+  color: var(--violet-deep);
+}
+
 /* --- ANNOUNCEMENT BAR --- */
 .announcement-bar {
-  background-color: var(--violet-dark);
+  background-color: #EDE7DC;
   text-align: center;
-  padding: 0.6rem 1rem;
-  font-size: 0.85rem;
+  padding: 0.65rem 1rem;
+  font-size: 0.86rem;
   font-family: var(--sans);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid #DFD8CB;
 }
 
 .announcement-bar a {
@@ -202,13 +232,13 @@ button, a {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: #2D2538;
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
 
 .announcement-bar a:hover {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .announcement-text {
@@ -216,18 +246,27 @@ button, a {
 }
 
 .announcement-cta {
-  font-weight: 600;
-  color: var(--paper);
+  font-weight: 700;
+  color: var(--violet-dark);
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.35rem;
   white-space: nowrap;
+}
+
+.announcement-cta span[aria-hidden="true"] {
+  color: #8C6D1B;
+  transition: transform 0.2s ease;
+}
+
+.announcement-bar a:hover .announcement-cta span[aria-hidden="true"] {
+  transform: translateX(3px);
 }
 
 @media (max-width: 600px) {
   .announcement-bar a {
     flex-direction: column;
-    gap: 0.2rem;
+    gap: 0.25rem;
   }
 }
 
@@ -1115,6 +1154,8 @@ button, a {
   color: var(--paper);
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 350px;
 }
 
 .sermon-card-modern:hover {
@@ -1326,6 +1367,8 @@ button, a {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 450px;
 }
 
 .book:hover {
@@ -1520,19 +1563,20 @@ button, a {
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  outline: none;
-  border-color: rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.08);
+  outline: 2px solid #FFFFFF;
+  outline-offset: 2px;
+  border-color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .form-note {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: #DDD6E3;
   margin-top: 0.4rem;
   text-align: center;
 }
@@ -1542,6 +1586,25 @@ button, a {
   min-width: 220px;
   text-align: center;
   margin-top: 0.5rem;
+  background-color: var(--gold);
+  color: var(--ink);
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form .button:hover {
+  background-color: var(--gold-hover);
+  color: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+}
+
+.contact-form .button:active {
+  background-color: var(--gold-dark);
+  transform: translateY(0);
 }
 
 @media (max-width: 600px) {
@@ -2270,7 +2333,7 @@ button, a {
     transform: none !important;
   }
   :focus-visible {
-    outline: 2px solid var(--violet) !important;
+    outline: 2px solid currentColor !important;
     outline-offset: 3px !important;
     transition: none !important;
   }

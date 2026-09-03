@@ -97,6 +97,11 @@ function generateJsonLd({ lang, pageKey, canonical, title }) {
   });
 }
 
+const HERO_PRELOADS = {
+  home: '/assets/portraits/philippe-shembo-hero.webp',
+  about: '/assets/portraits/philippe-shembo-couple.webp'
+};
+
 export function renderPage({ lang, pageKey, title, description, ogTitle, ogDescription, bodyHtml }) {
   const path = pathFor(pageKey, lang);
   const otherLang = lang === 'fr' ? 'en' : 'fr';
@@ -109,6 +114,9 @@ export function renderPage({ lang, pageKey, title, description, ogTitle, ogDescr
   const header = renderHeader({ lang, pageKey });
   const footer = renderFooter({ lang, otherLangPath: otherPath });
   const jsonLd = generateJsonLd({ lang, pageKey, canonical, title });
+  const heroPreload = HERO_PRELOADS[pageKey]
+    ? `\n    <link rel="preload" href="${HERO_PRELOADS[pageKey]}" as="image" fetchpriority="high">`
+    : '';
 
   return `<!doctype html>
 <html lang="${lang}">
@@ -119,10 +127,10 @@ export function renderPage({ lang, pageKey, title, description, ogTitle, ogDescr
     <link rel="icon" href="/favicon.png" type="image/png" sizes="512x512">
     <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
     <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">${heroPreload}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
     <title>${title}</title>
     <meta name="description" content="${description}">
     <link rel="canonical" href="${canonical}">
@@ -142,11 +150,21 @@ export function renderPage({ lang, pageKey, title, description, ogTitle, ogDescr
     <meta name="twitter:image" content="${SITE_ORIGIN}/assets/portraits/philippe-shembo-hero.webp">
     <link rel="stylesheet" href="/src/styles/main.css">
     <script type="application/ld+json">${jsonLd}</script>
+    <script type="speculationrules">
+      {
+        "prerender": [
+          {
+            "where": { "href_matches": "/*" },
+            "eagerness": "moderate"
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     ${skipLink}
     ${header}
-    <main id="main">
+    <main id="main" tabindex="-1">
 ${bodyHtml}
     </main>
     ${footer}

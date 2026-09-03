@@ -54,7 +54,7 @@ export function renderHeader({ lang, pageKey }) {
         <ul>${navLinks}</ul>
         <div class="language" aria-label="${copy.langLabel}">
           <details class="lang-dropdown">
-            <summary class="lang-summary"><span class="lang-current"><span class="lang-prefix">${copy.langLabel} : </span>${lang.toUpperCase()}</span> <span class="lang-caret">▾</span></summary>
+            <summary class="lang-summary"><span class="lang-current"><span class="lang-prefix">${copy.langLabel} : </span>${lang.toUpperCase()}</span> <span class="lang-caret" aria-hidden="true">▾</span></summary>
             <div class="lang-menu">
               <a href="${frPath}"${frCurrent}><span>FR</span> <span class="lang-name">Français</span></a>
               <a href="${enPath}"${enCurrent}><span>EN</span> <span class="lang-name">English</span></a>
