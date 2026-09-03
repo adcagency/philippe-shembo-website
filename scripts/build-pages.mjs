@@ -36,8 +36,10 @@ for (const page of PAGES) {
 // Ensure src/ (styles & scripts) is copied to public/src/
 await cp(path.join(root, 'src'), path.join(root, 'public', 'src'), { recursive: true });
 
-// Ensure robots.txt and sitemap.xml exist at root for static server
+// Ensure robots.txt, sitemap.xml and og/ exist at root for static server
 await cp(path.join(root, 'public', 'robots.txt'), path.join(root, 'robots.txt'));
 await cp(path.join(root, 'public', 'sitemap.xml'), path.join(root, 'sitemap.xml'));
+await cp(path.join(root, 'public', 'og'), path.join(root, 'og'), { recursive: true });
 
 console.log(`Generated ${PAGES.length * 2} pages`);
+

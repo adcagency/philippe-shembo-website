@@ -37,5 +37,22 @@ test('renderPage embeds a Person JSON-LD block using the official social URLs', 
   assert.match(html, /https:\/\/www\.youtube\.com\/@andyphilippeshembo/);
   assert.match(html, /"@type":"WebSite"/);
   assert.match(html, /"@type":"BreadcrumbList"/);
+  assert.match(html, /"@type":"ContactPage"/);
+  assert.match(html, /"knowsLanguage":\["fr","en"\]/);
 });
+
+test('renderPage includes robots meta directive and high-res Open Graph / Twitter tags', () => {
+  const htmlFr = renderPage({ lang: 'fr', pageKey: 'home', ...base });
+  assert.match(htmlFr, /<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">/);
+  assert.match(htmlFr, /<meta property="og:image" content="https:\/\/philippeshembo\.com\/og\/philippe-shembo-fr\.png">/);
+  assert.match(htmlFr, /<meta property="og:image:width" content="1200">/);
+  assert.match(htmlFr, /<meta property="og:image:height" content="630">/);
+  assert.match(htmlFr, /<meta name="twitter:card" content="summary_large_image">/);
+  assert.match(htmlFr, /<meta name="twitter:image" content="https:\/\/philippeshembo\.com\/og\/philippe-shembo-fr\.png">/);
+
+  const htmlEn = renderPage({ lang: 'en', pageKey: 'home', ...base });
+  assert.match(htmlEn, /<meta property="og:image" content="https:\/\/philippeshembo\.com\/og\/philippe-shembo-en\.png">/);
+  assert.match(htmlEn, /<meta name="twitter:image" content="https:\/\/philippeshembo\.com\/og\/philippe-shembo-en\.png">/);
+});
+
 

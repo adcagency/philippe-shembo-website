@@ -5,7 +5,7 @@ import { renderFooter } from '../partials/footer.js';
 
 const SITE_ORIGIN = 'https://philippeshembo.com';
 
-function generateJsonLd({ lang, pageKey, canonical, title }) {
+function generateJsonLd({ lang, pageKey, canonical, title, description }) {
   const graph = [
     {
       '@type': 'Person',
@@ -17,6 +17,7 @@ function generateJsonLd({ lang, pageKey, canonical, title }) {
       description: lang === 'fr'
         ? 'Apôtre et pasteur, fondateur des Éditions Lampe à mes Pieds, responsable de la Famille des Assemblées Chrétiennes au Maroc et des Églises Grâce Déployée.'
         : 'Apostle and pastor, founder of Lampe à mes Pieds Publishing, leader of the Christian Assemblies Family in Morocco and Grâce Déployée churches.',
+      knowsLanguage: ['fr', 'en'],
       alumniOf: {
         '@type': 'CollegeOrUniversity',
         name: 'Université Chouaïb Doukkali'
@@ -62,6 +63,24 @@ function generateJsonLd({ lang, pageKey, canonical, title }) {
           item: canonical
         }
       ]
+    });
+  }
+
+  if (pageKey === 'about') {
+    graph.push({
+      '@type': 'AboutPage',
+      '@id': `${canonical}#webpage`,
+      url: canonical,
+      name: title,
+      description: description
+    });
+  } else if (pageKey === 'contact') {
+    graph.push({
+      '@type': 'ContactPage',
+      '@id': `${canonical}#webpage`,
+      url: canonical,
+      name: title,
+      description: description
     });
   }
 
@@ -113,7 +132,7 @@ export function renderPage({ lang, pageKey, title, description, ogTitle, ogDescr
   const skipLink = renderSkipLink(lang);
   const header = renderHeader({ lang, pageKey });
   const footer = renderFooter({ lang, otherLangPath: otherPath });
-  const jsonLd = generateJsonLd({ lang, pageKey, canonical, title });
+  const jsonLd = generateJsonLd({ lang, pageKey, canonical, title, description });
   const heroPreload = HERO_PRELOADS[pageKey]
     ? `\n    <link rel="preload" href="${HERO_PRELOADS[pageKey]}" as="image" fetchpriority="high">`
     : '';
@@ -133,6 +152,7 @@ export function renderPage({ lang, pageKey, title, description, ogTitle, ogDescr
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
     <title>${title}</title>
     <meta name="description" content="${description}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="${canonical}">
     <link rel="alternate" hreflang="fr" href="${SITE_ORIGIN}${frPath}">
     <link rel="alternate" hreflang="en" href="${SITE_ORIGIN}${enPath}">
@@ -143,11 +163,17 @@ export function renderPage({ lang, pageKey, title, description, ogTitle, ogDescr
     <meta property="og:title" content="${ogTitle}">
     <meta property="og:description" content="${ogDescription}">
     <meta property="og:url" content="${canonical}">
-    <meta property="og:image" content="${SITE_ORIGIN}/assets/portraits/philippe-shembo-hero.webp">
+    <meta property="og:image" content="${SITE_ORIGIN}/og/philippe-shembo-${lang}.png">
+    <meta property="og:image:secure_url" content="${SITE_ORIGIN}/og/philippe-shembo-${lang}.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="${lang === 'fr' ? 'Apôtre Philippe A. Shembo — Pasteur, Auteur, Formateur' : 'Apostle Philippe A. Shembo — Pastor, Author, Trainer'}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${ogTitle}">
     <meta name="twitter:description" content="${ogDescription}">
-    <meta name="twitter:image" content="${SITE_ORIGIN}/assets/portraits/philippe-shembo-hero.webp">
+    <meta name="twitter:image" content="${SITE_ORIGIN}/og/philippe-shembo-${lang}.png">
+    <meta name="twitter:image:alt" content="${lang === 'fr' ? 'Apôtre Philippe A. Shembo — Pasteur, Auteur, Formateur' : 'Apostle Philippe A. Shembo — Pastor, Author, Trainer'}">
     <link rel="stylesheet" href="/src/styles/main.css">
     <script type="application/ld+json">${jsonLd}</script>
     <script type="speculationrules">

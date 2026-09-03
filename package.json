@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "assets": "node scripts/optimize-assets.mjs",
+    "assets": "node scripts/optimize-assets.mjs && node scripts/generate-og-images.mjs",
     "build:pages": "node scripts/build-pages.mjs",
-    "build": "node scripts/optimize-assets.mjs && node scripts/build-pages.mjs",
+    "build": "node scripts/optimize-assets.mjs && node scripts/generate-og-images.mjs && node scripts/build-pages.mjs",
     "test": "node --test tests/**/*.test.js",
     "test:e2e": "playwright test",
     "test:a11y": "playwright test tests/accessibility.spec.js",
