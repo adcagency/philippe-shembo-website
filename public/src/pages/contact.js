@@ -11,10 +11,10 @@ export const contactPage = {
           <h1>Écrivez-nous</h1>
           <p class="section-intro">Pour toute demande officielle, invitation, question pastorale ou renseignement, vous pouvez renseigner ce formulaire ou écrire directement à <a href="mailto:contact@philippeshembo.com">contact@philippeshembo.com</a>.</p>
           
-          <form action="https://api.staticforms.xyz/submit" method="post" class="contact-form">
-            <input type="hidden" name="accessKey" value="YOUR_STATICFORMS_ACCESS_KEY">
+          <form action="https://api.staticforms.dev/submit" method="post" class="contact-form">
+            <input type="hidden" name="apiKey" value="sf_8f25a79e606fb51b92408a63">
             <input type="hidden" name="subject" value="Nouveau message depuis le site Philippe Shembo">
-            <input type="hidden" name="redirectTo" value="https://VOTRE_DOMAINE.com/contact/?success=true">
+            <input type="hidden" name="redirectTo" value="https://philippeshembo.com/contact/?success=true">
             <input type="text" name="honeypot" style="display:none">
             
             <div class="form-group">
@@ -46,10 +46,10 @@ export const contactPage = {
           <h1>Write to us</h1>
           <p class="section-intro">For official inquiries, ministry invitations, or pastoral information, you can use this form or reach out directly to <a href="mailto:contact@philippeshembo.com">contact@philippeshembo.com</a>.</p>
           
-          <form action="https://api.staticforms.xyz/submit" method="post" class="contact-form">
-            <input type="hidden" name="accessKey" value="YOUR_STATICFORMS_ACCESS_KEY">
+          <form action="https://api.staticforms.dev/submit" method="post" class="contact-form">
+            <input type="hidden" name="apiKey" value="sf_8f25a79e606fb51b92408a63">
             <input type="hidden" name="subject" value="New message from Philippe Shembo website">
-            <input type="hidden" name="redirectTo" value="https://VOTRE_DOMAINE.com/en/contact/?success=true">
+            <input type="hidden" name="redirectTo" value="https://philippeshembo.com/en/contact/?success=true">
             <input type="text" name="honeypot" style="display:none">
             
             <div class="form-group">
