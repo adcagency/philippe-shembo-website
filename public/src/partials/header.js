@@ -50,15 +50,17 @@ export function renderHeader({ lang, pageKey }) {
           <rect class="line line-bottom" x="4" y="16.5" width="16" height="1.5" rx="0.75"></rect>
         </svg>
       </button>
-      <nav class="site-nav" id="site-navigation" aria-label="${copy.navLabel}" data-navigation data-open="false"><ul>${navLinks}</ul></nav>
-      <div class="language" aria-label="${copy.langLabel}">
-        <details class="lang-dropdown">
-          <summary class="lang-summary"><span>${lang.toUpperCase()}</span> <span class="lang-caret">▾</span></summary>
-          <div class="lang-menu">
-            <a href="${frPath}"${frCurrent}><span>FR</span> <span class="lang-name">Français</span></a>
-            <a href="${enPath}"${enCurrent}><span>EN</span> <span class="lang-name">English</span></a>
-          </div>
-        </details>
-      </div>
+      <nav class="site-nav" id="site-navigation" aria-label="${copy.navLabel}" data-navigation data-open="false">
+        <ul>${navLinks}</ul>
+        <div class="language" aria-label="${copy.langLabel}">
+          <details class="lang-dropdown">
+            <summary class="lang-summary"><span class="lang-current"><span class="lang-prefix">${copy.langLabel} : </span>${lang.toUpperCase()}</span> <span class="lang-caret">▾</span></summary>
+            <div class="lang-menu">
+              <a href="${frPath}"${frCurrent}><span>FR</span> <span class="lang-name">Français</span></a>
+              <a href="${enPath}"${enCurrent}><span>EN</span> <span class="lang-name">English</span></a>
+            </div>
+          </details>
+        </div>
+      </nav>
     </div></header>`;
 }

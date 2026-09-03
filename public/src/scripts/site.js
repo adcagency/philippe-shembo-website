@@ -15,6 +15,17 @@ if (menuButton && navigation) {
       menuButton.focus();
     }
   });
+
+  document.addEventListener('click', (event) => {
+    if (
+      navigation.dataset.open === 'true' &&
+      !navigation.contains(event.target) &&
+      !menuButton.contains(event.target)
+    ) {
+      menuButton.setAttribute('aria-expanded', 'false');
+      navigation.dataset.open = 'false';
+    }
+  });
 }
 
 /* Language dropdown: close on outside click */

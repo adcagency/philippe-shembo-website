@@ -51,5 +51,31 @@ test('French home nav has no anchor links', async ({ page }) => {
 
 test('nav highlights the current page with aria-current', async ({ page }) => {
   await page.goto('/a-propos/');
-  await expect(page.locator('nav a[href="/a-propos/"]')).toHaveAttribute('aria-current', 'page');
+  await expect(page.locator('nav ul a[href="/a-propos/"]')).toHaveAttribute('aria-current', 'page');
 });
+
+test('mobile view has hamburger menu at extreme right with language selector inside', async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 667 });
+  await page.goto('/');
+
+  const menuButton = page.locator('[data-menu-button]');
+  await expect(menuButton).toBeVisible();
+
+  // Language selector is inside navigation
+  const nav = page.locator('[data-navigation]');
+  await expect(nav.locator('.language')).toHaveCount(1);
+
+  // Navigation is closed by default
+  await expect(nav).toHaveAttribute('data-open', 'false');
+
+  // Verify hamburger button is positioned at the right side of header
+  const headerBox = await page.locator('.header-inner').boundingBox();
+  const btnBox = await menuButton.boundingBox();
+  expect(btnBox.x + btnBox.width).toBeGreaterThan(headerBox.x + headerBox.width - 40);
+
+  // Click hamburger opens navigation and shows language selector
+  await menuButton.click();
+  await expect(nav).toHaveAttribute('data-open', 'true');
+  await expect(nav.locator('.language')).toBeVisible();
+});
+

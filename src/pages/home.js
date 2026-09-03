@@ -13,7 +13,7 @@ export const homePage = {
         </div>
         <figure class="hero-portrait">
           <div class="hero-portrait-frame">
-            <img src="/assets/portraits/philippe-shembo-hero.webp" width="667" height="1000" alt="Portrait du Pasteur Philippe A. Shembo" decoding="async" fetchpriority="high">
+            <img src="/assets/portraits/philippe-shembo-hero.webp" width="800" height="1000" alt="Portrait du Pasteur Philippe A. Shembo" decoding="async" fetchpriority="high">
           </div>
         </figure>
       </div></section>
@@ -142,7 +142,7 @@ export const homePage = {
         </div>
         <figure class="hero-portrait">
           <div class="hero-portrait-frame">
-            <img src="/assets/portraits/philippe-shembo-hero.webp" width="667" height="1000" alt="Portrait of Pastor Philippe A. Shembo" decoding="async" fetchpriority="high">
+            <img src="/assets/portraits/philippe-shembo-hero.webp" width="800" height="1000" alt="Portrait of Pastor Philippe A. Shembo" decoding="async" fetchpriority="high">
           </div>
         </figure>
       </div></section>
