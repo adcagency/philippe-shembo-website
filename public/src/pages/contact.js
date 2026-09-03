@@ -15,7 +15,8 @@ export const contactPage = {
             <input type="hidden" name="apiKey" value="sf_8f25a79e606fb51b92408a63">
             <input type="hidden" name="subject" value="Nouveau message depuis le site Philippe Shembo">
             <input type="hidden" name="redirectTo" value="https://philippeshembo.com/contact/?success=true">
-            <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <label for="contact-honeypot" class="visually-hidden">Ne pas remplir ce champ</label>
+            <input type="text" name="honeypot" id="contact-honeypot" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
             
             <div class="form-group">
               <label for="name">Nom complet <span aria-hidden="true">*</span></label>
@@ -49,7 +50,8 @@ export const contactPage = {
             <input type="hidden" name="apiKey" value="sf_8f25a79e606fb51b92408a63">
             <input type="hidden" name="subject" value="New message from Philippe Shembo website">
             <input type="hidden" name="redirectTo" value="https://philippeshembo.com/en/contact/?success=true">
-            <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <label for="en-contact-honeypot" class="visually-hidden">Do not fill this field</label>
+            <input type="text" name="honeypot" id="en-contact-honeypot" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
             
             <div class="form-group">
               <label for="name">Full name <span aria-hidden="true">*</span></label>
