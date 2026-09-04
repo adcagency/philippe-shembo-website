@@ -6,12 +6,12 @@ export const mediaPage = {
     ogTitle: 'Apôtre Philippe A. Shembo | Espace Médias & Prédications',
     ogDescription: 'Retrouvez l’ensemble des prédications, enseignements et séries vidéo de l’Apôtre Philippe A. Shembo.',
     bodyHtml: `      <section class="section section--violet"><div class="shell">
-        <div class="section-header text-center reveal-on-scroll">
+        <div class="section-header text-center">
           <h1 class="section-title">Prédications, Enseignements &amp; Messages</h1>
           <p class="section-intro">Nourrissez votre foi avec les messages inspirés et les séries d'édification de l’Apôtre Philippe A. Shembo.</p>
         </div>
 
-        <div class="media-filter-pills reveal-on-scroll">
+        <div class="media-filter-pills">
           <span class="filter-pill filter-pill--active">Tous les messages</span>
           <span class="filter-pill">Prédications</span>
           <span class="filter-pill">Enseignements</span>
@@ -107,12 +107,12 @@ export const mediaPage = {
     ogTitle: 'Apostle Philippe A. Shembo | Media & Sermons',
     ogDescription: "Watch all sermons, teachings, and video series by Apostle Philippe A. Shembo.",
     bodyHtml: `      <section class="section section--violet"><div class="shell">
-        <div class="section-header text-center reveal-on-scroll">
+        <div class="section-header text-center">
           <h1 class="section-title">Sermons, Teachings &amp; Messages</h1>
           <p class="section-intro">Nourish your faith with inspired teachings and video series by Apostle Philippe A. Shembo.</p>
         </div>
 
-        <div class="media-filter-pills reveal-on-scroll">
+        <div class="media-filter-pills">
           <span class="filter-pill filter-pill--active">All messages</span>
           <span class="filter-pill">Sermons</span>
           <span class="filter-pill">Teachings</span>

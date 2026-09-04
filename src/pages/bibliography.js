@@ -21,7 +21,7 @@ export const bibliographyPage = {
     description: 'Découvrez la collection complète des livres et manuels publiés par Philippe A. Shembo aux Éditions Lampe à mes Pieds.',
     ogTitle: 'Apôtre Philippe A. Shembo | Bibliographie et Ouvrages',
     ogDescription: 'Découvrez la collection complète des livres et manuels publiés par Philippe A. Shembo aux Éditions Lampe à mes Pieds.',
-    bodyHtml: `      <section class="section section--sand"><div class="shell"><h1 class="section-title reveal-on-scroll">Ouvrages &amp; Publications</h1><p class="section-intro reveal-on-scroll">Découvrez les collections pastorales, manuels d'édification, ouvrages sur le mariage et la guérison intérieure écrits par l'Apôtre Philippe A. Shembo.</p><div class="books">
+    bodyHtml: `      <section class="section section--sand"><div class="shell"><h1 class="section-title">Ouvrages &amp; Publications</h1><p class="section-intro">Découvrez les collections pastorales, manuels d'édification, ouvrages sur le mariage et la guérison intérieure écrits par l'Apôtre Philippe A. Shembo.</p><div class="books">
         ${renderBookCards('fr')}
       </div>${frShowMore}<p class="margin-top-md text-center reveal-on-scroll"><a class="button" href="https://www.lampeamespieds.com/?category=pcol_01KXFST2DK0NQE5TAZWNY292GT" target="_blank" rel="noopener noreferrer">Commander sur la boutique officielle</a></p></div></section>`
   },
@@ -30,7 +30,7 @@ export const bibliographyPage = {
     description: 'Discover the complete collection of books and manuals written by Apostle Philippe A. Shembo published by Lampe à mes Pieds.',
     ogTitle: 'Apostle Philippe A. Shembo | Bibliography and Books',
     ogDescription: 'Discover the complete collection of books and manuals written by Apostle Philippe A. Shembo published by Lampe à mes Pieds.',
-    bodyHtml: `      <section class="section section--sand"><div class="shell"><h1 class="section-title reveal-on-scroll">Books &amp; Publications</h1><p class="section-intro reveal-on-scroll">Explore pastoral collections, teachings, marriage guidance, and inner healing books by Apostle Philippe A. Shembo.</p><div class="books">
+    bodyHtml: `      <section class="section section--sand"><div class="shell"><h1 class="section-title">Books &amp; Publications</h1><p class="section-intro">Explore pastoral collections, teachings, marriage guidance, and inner healing books by Apostle Philippe A. Shembo.</p><div class="books">
         ${renderBookCards('en')}
       </div>${enShowMore}<p class="margin-top-md text-center reveal-on-scroll"><a class="button" href="https://www.lampeamespieds.com/?category=pcol_01KXFST2DK0NQE5TAZWNY292GT" target="_blank" rel="noopener noreferrer">Order on Official Bookstore</a></p></div></section>`
   }
