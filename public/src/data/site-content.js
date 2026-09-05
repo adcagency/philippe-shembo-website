@@ -90,6 +90,24 @@ export const SITE_CONTENT = {
       title: 'MARIAGE Choix & Destinée (Tome 1)',
       description: 'Collection « Le Mariage Selon Dieu » — Fondements et discernement pour un mariage béni.',
       url: 'À venir'
+    },
+    {
+      image: '/assets/books/book-15.png',
+      title: 'Ruth la Moabite',
+      description: 'Collection « La Guérison des cœurs brisés » — Quand la foi change une destinée.',
+      url: 'À venir'
+    },
+    {
+      image: '/assets/books/book-16.png',
+      title: 'Naomi ou Mara',
+      description: 'Collection « La Guérison des cœurs brisés » — Le choix te revient.',
+      url: 'À venir'
+    },
+    {
+      image: '/assets/books/book-17.png',
+      title: 'Boaz le rédempteur',
+      description: 'Collection « La Guérison des cœurs brisés » — Un homme de valeur au milieu d’une génération corrompue.',
+      url: 'À venir'
     }
   ],
   support: {

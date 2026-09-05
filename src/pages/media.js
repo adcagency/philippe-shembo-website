@@ -15,80 +15,92 @@ export const mediaPage = {
           <span class="filter-pill filter-pill--active">Tous les messages</span>
           <span class="filter-pill">Prédications</span>
           <span class="filter-pill">Enseignements</span>
-          <span class="filter-pill">Mariage &amp; Famille</span>
-          <span class="filter-pill">Guérison Intérieure</span>
+          <span class="filter-pill">Cultes</span>
+          <span class="filter-pill">Prière</span>
         </div>
 
         <div class="sermon-grid margin-top-md">
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/@andyphilippeshembo" target="_blank" rel="noopener noreferrer">
+          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=pxer5c7UXWQ" target="_blank" rel="noopener noreferrer">
             <div class="sermon-media-preview">
+              <img class="sermon-thumb" src="https://img.youtube.com/vi/pxer5c7UXWQ/maxresdefault.jpg" alt="Choisir ce qui aura un impact éternel" loading="lazy">
+              <div class="sermon-overlay" aria-hidden="true"></div>
               <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Guérison Intérieure</span>
+              <span class="sermon-tag">Prédication · 59 min</span>
             </div>
             <div class="sermon-content-box">
-              <h2>La Guérison des Cœurs Brisés</h2>
-              <p>Une traversée biblique pour surmonter les blessures du passé et recevoir la pleine restauration en Christ.</p>
-              <span class="sermon-action-link">Regarder l’enseignement →</span>
+              <h2>Choisir ce qui aura un impact éternel</h2>
+              <p>Aligner ses priorités, ses choix de vie et ses talents sur les valeurs éternelles du Royaume de Dieu.</p>
+              <span class="sermon-action-link">Regarder sur YouTube →</span>
             </div>
           </a>
 
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/@andyphilippeshembo" target="_blank" rel="noopener noreferrer">
+          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=mUr1Pm9QQZk" target="_blank" rel="noopener noreferrer">
             <div class="sermon-media-preview">
+              <img class="sermon-thumb" src="https://img.youtube.com/vi/mUr1Pm9QQZk/maxresdefault.jpg" alt="Booz, un homme couronné d'honneur" loading="lazy">
+              <div class="sermon-overlay" aria-hidden="true"></div>
               <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Leadership &amp; Service</span>
+              <span class="sermon-tag">Culte · 2h 43 min</span>
             </div>
             <div class="sermon-content-box">
-              <h2>Le Serviteur Selon le Cœur de Dieu</h2>
-              <p>Principes et fondements d'un ministère intègre et fidèle au service du Roi des rois.</p>
-              <span class="sermon-action-link">Regarder l’enseignement →</span>
+              <h2>Booz, un homme couronné d'honneur</h2>
+              <p>Message sur l'élévation divine, l'intégrité et la renommée qui découle de la fidélité dans l'épreuve.</p>
+              <span class="sermon-action-link">Regarder sur YouTube →</span>
             </div>
           </a>
 
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/@andyphilippeshembo" target="_blank" rel="noopener noreferrer">
+          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=43qTSHXgXb0" target="_blank" rel="noopener noreferrer">
             <div class="sermon-media-preview">
+              <img class="sermon-thumb" src="https://img.youtube.com/vi/43qTSHXgXb0/maxresdefault.jpg" alt="Comment prier avec la certitude que Dieu m'écoute ?" loading="lazy">
+              <div class="sermon-overlay" aria-hidden="true"></div>
               <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Mariage &amp; Famille</span>
+              <span class="sermon-tag">Enseignement · 37 min</span>
             </div>
             <div class="sermon-content-box">
-              <h2>Mariage : Choix, Temps &amp; Destinée</h2>
-              <p>Clés spirituelles et pratiques pour bâtir un foyer solide, harmonieux et aligné sur la volonté divine.</p>
-              <span class="sermon-action-link">Regarder l’enseignement →</span>
+              <h2>Comment prier avec la certitude que Dieu m'écoute&nbsp;?</h2>
+              <p>Principes bibliques pour une prière fervente, efficace et fondée sur l'intimité avec le Père céleste.</p>
+              <span class="sermon-action-link">Regarder sur YouTube →</span>
             </div>
           </a>
 
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/@andyphilippeshembo" target="_blank" rel="noopener noreferrer">
+          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=gVZffwLAVmY" target="_blank" rel="noopener noreferrer">
             <div class="sermon-media-preview">
+              <img class="sermon-thumb" src="https://img.youtube.com/vi/gVZffwLAVmY/maxresdefault.jpg" alt="Près de Sodome aujourd’hui… Dans Sodome demain" loading="lazy">
+              <div class="sermon-overlay" aria-hidden="true"></div>
               <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Vie Victorieuse</span>
+              <span class="sermon-tag">Prédication · 2h 15 min</span>
             </div>
             <div class="sermon-content-box">
-              <h2>Être Libre en Jésus-Christ</h2>
-              <p>Marcher dans la victoire spirituelle, briser les chaînes et manifester la sainteté au quotidien.</p>
-              <span class="sermon-action-link">Regarder l’enseignement →</span>
+              <h2>Près de Sodome aujourd’hui… Dans Sodome demain</h2>
+              <p>Exhortation et discernement spirituel face aux compromis progressifs et à la préservation de la sainteté.</p>
+              <span class="sermon-action-link">Regarder sur YouTube →</span>
             </div>
           </a>
 
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/@andyphilippeshembo" target="_blank" rel="noopener noreferrer">
+          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=pBMA3oGVLDk" target="_blank" rel="noopener noreferrer">
             <div class="sermon-media-preview">
+              <img class="sermon-thumb" src="https://img.youtube.com/vi/pBMA3oGVLDk/maxresdefault.jpg" alt="Ce qu'Orpa a choisi n'existe plus" loading="lazy">
+              <div class="sermon-overlay" aria-hidden="true"></div>
               <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Formation Masculine</span>
+              <span class="sermon-tag">Culte · 2h 16 min</span>
             </div>
             <div class="sermon-content-box">
-              <h2>Fortifie-toi et Sois un Homme</h2>
-              <p>Appel au réveil, au courage et à la responsabilité des hommes de valeur et d'exploits.</p>
-              <span class="sermon-action-link">Regarder l’enseignement →</span>
+              <h2>Ce qu'Orpa a choisi n'existe plus</h2>
+              <p>Le choix de la destinée : renoncer au visible éphémère pour s'attacher à l'appel durable de Dieu.</p>
+              <span class="sermon-action-link">Regarder sur YouTube →</span>
             </div>
           </a>
 
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/@andyphilippeshembo" target="_blank" rel="noopener noreferrer">
+          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=3LNiBmQ8Qf0" target="_blank" rel="noopener noreferrer">
             <div class="sermon-media-preview">
+              <img class="sermon-thumb" src="https://img.youtube.com/vi/3LNiBmQ8Qf0/maxresdefault.jpg" alt="Culte de Célébration" loading="lazy">
+              <div class="sermon-overlay" aria-hidden="true"></div>
               <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Prière &amp; Puissance</span>
+              <span class="sermon-tag">Culte · 3h 15 min</span>
             </div>
             <div class="sermon-content-box">
-              <h2>L'Impact de la Prière Fervente</h2>
-              <p>Développer une vie d'intimité avec le Saint-Esprit et déclencher l'action de Dieu dans sa génération.</p>
-              <span class="sermon-action-link">Regarder l’enseignement →</span>
+              <h2>Culte de Célébration</h2>
+              <p>Temps d'adoration, ministère puissant de la Parole apostolique et communion fraternelle édifiante.</p>
+              <span class="sermon-action-link">Regarder sur YouTube →</span>
             </div>
           </a>
         </div>
@@ -116,80 +128,92 @@ export const mediaPage = {
           <span class="filter-pill filter-pill--active">All messages</span>
           <span class="filter-pill">Sermons</span>
           <span class="filter-pill">Teachings</span>
-          <span class="filter-pill">Marriage &amp; Family</span>
-          <span class="filter-pill">Inner Healing</span>
+          <span class="filter-pill">Worship</span>
+          <span class="filter-pill">Prayer</span>
         </div>
 
         <div class="sermon-grid margin-top-md">
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/@andyphilippeshembo" target="_blank" rel="noopener noreferrer">
+          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=pxer5c7UXWQ" target="_blank" rel="noopener noreferrer">
             <div class="sermon-media-preview">
+              <img class="sermon-thumb" src="https://img.youtube.com/vi/pxer5c7UXWQ/maxresdefault.jpg" alt="Choosing What Has an Eternal Impact" loading="lazy">
+              <div class="sermon-overlay" aria-hidden="true"></div>
               <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Inner Healing</span>
+              <span class="sermon-tag">Sermon · 59 min</span>
             </div>
             <div class="sermon-content-box">
-              <h2>Healing Broken Hearts</h2>
-              <p>A biblical journey to overcome past trauma and walk in divine restoration through Christ.</p>
-              <span class="sermon-action-link">Watch teaching →</span>
+              <h2>Choosing What Has an Eternal Impact</h2>
+              <p>Aligning your priorities, life choices, and talents with the everlasting values of God's Kingdom.</p>
+              <span class="sermon-action-link">Watch on YouTube →</span>
             </div>
           </a>
 
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/@andyphilippeshembo" target="_blank" rel="noopener noreferrer">
+          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=mUr1Pm9QQZk" target="_blank" rel="noopener noreferrer">
             <div class="sermon-media-preview">
+              <img class="sermon-thumb" src="https://img.youtube.com/vi/mUr1Pm9QQZk/maxresdefault.jpg" alt="Boaz, a Man Crowned with Honor" loading="lazy">
+              <div class="sermon-overlay" aria-hidden="true"></div>
               <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Leadership &amp; Service</span>
+              <span class="sermon-tag">Service · 2h 43 min</span>
             </div>
             <div class="sermon-content-box">
-              <h2>The Servant After God's Heart</h2>
-              <p>Foundational principles for an upright and fruitful life of ministry for the King of kings.</p>
-              <span class="sermon-action-link">Watch teaching →</span>
+              <h2>Boaz, a Man Crowned with Honor</h2>
+              <p>A message on divine elevation, integrity, and honor born of godly faithfulness through trials.</p>
+              <span class="sermon-action-link">Watch on YouTube →</span>
             </div>
           </a>
 
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/@andyphilippeshembo" target="_blank" rel="noopener noreferrer">
+          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=43qTSHXgXb0" target="_blank" rel="noopener noreferrer">
             <div class="sermon-media-preview">
+              <img class="sermon-thumb" src="https://img.youtube.com/vi/43qTSHXgXb0/maxresdefault.jpg" alt="How to Pray with the Assurance That God Hears You" loading="lazy">
+              <div class="sermon-overlay" aria-hidden="true"></div>
               <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Marriage &amp; Family</span>
+              <span class="sermon-tag">Teaching · 37 min</span>
             </div>
             <div class="sermon-content-box">
-              <h2>Marriage: Choice, Time &amp; Destiny</h2>
-              <p>Spiritual wisdom and practical keys for a blessed, lasting, and Christ-centered home.</p>
-              <span class="sermon-action-link">Watch teaching →</span>
+              <h2>How to Pray with the Assurance That God Hears You</h2>
+              <p>Biblical keys for fervent, effective prayer rooted in confident communion with the Heavenly Father.</p>
+              <span class="sermon-action-link">Watch on YouTube →</span>
             </div>
           </a>
 
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/@andyphilippeshembo" target="_blank" rel="noopener noreferrer">
+          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=gVZffwLAVmY" target="_blank" rel="noopener noreferrer">
             <div class="sermon-media-preview">
+              <img class="sermon-thumb" src="https://img.youtube.com/vi/gVZffwLAVmY/maxresdefault.jpg" alt="Near Sodom Today… In Sodom Tomorrow" loading="lazy">
+              <div class="sermon-overlay" aria-hidden="true"></div>
               <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Victorious Living</span>
+              <span class="sermon-tag">Sermon · 2h 15 min</span>
             </div>
             <div class="sermon-content-box">
-              <h2>Walking in Freedom Through Christ</h2>
-              <p>Overcoming spiritual strongholds, breaking chains, and living in daily holiness.</p>
-              <span class="sermon-action-link">Watch teaching →</span>
+              <h2>Near Sodom Today… In Sodom Tomorrow</h2>
+              <p>Spiritual discernment and solemn warning regarding progressive compromise and worldly attraction.</p>
+              <span class="sermon-action-link">Watch on YouTube →</span>
             </div>
           </a>
 
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/@andyphilippeshembo" target="_blank" rel="noopener noreferrer">
+          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=pBMA3oGVLDk" target="_blank" rel="noopener noreferrer">
             <div class="sermon-media-preview">
+              <img class="sermon-thumb" src="https://img.youtube.com/vi/pBMA3oGVLDk/maxresdefault.jpg" alt="What Orpah Chose No Longer Exists" loading="lazy">
+              <div class="sermon-overlay" aria-hidden="true"></div>
               <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Men's Ministry</span>
+              <span class="sermon-tag">Service · 2h 16 min</span>
             </div>
             <div class="sermon-content-box">
-              <h2>Be Strong and Be a Man</h2>
-              <p>A call to spiritual courage, conviction, and responsibility for men of valor and exploit.</p>
-              <span class="sermon-action-link">Watch teaching →</span>
+              <h2>What Orpah Chose No Longer Exists</h2>
+              <p>The choice of destiny: forsaking the fleeting to cling to God's eternal promise and calling.</p>
+              <span class="sermon-action-link">Watch on YouTube →</span>
             </div>
           </a>
 
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/@andyphilippeshembo" target="_blank" rel="noopener noreferrer">
+          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=3LNiBmQ8Qf0" target="_blank" rel="noopener noreferrer">
             <div class="sermon-media-preview">
+              <img class="sermon-thumb" src="https://img.youtube.com/vi/3LNiBmQ8Qf0/maxresdefault.jpg" alt="Celebration Service" loading="lazy">
+              <div class="sermon-overlay" aria-hidden="true"></div>
               <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Prayer &amp; Power</span>
+              <span class="sermon-tag">Worship · 3h 15 min</span>
             </div>
             <div class="sermon-content-box">
-              <h2>The Impact of Fervent Prayer</h2>
-              <p>Cultivating intimacy with the Holy Spirit and releasing God's power in this generation.</p>
-              <span class="sermon-action-link">Watch teaching →</span>
+              <h2>Celebration Service</h2>
+              <p>Praise, worship, powerful apostolic preaching, and life-transforming ministry in the Spirit.</p>
+              <span class="sermon-action-link">Watch on YouTube →</span>
             </div>
           </a>
         </div>

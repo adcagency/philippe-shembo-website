@@ -3,7 +3,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { mediaPage } from '../src/pages/media.js';
 
-test('media page has one h1 and sermon cards linking to the official channel only', () => {
+test('media page has one h1 and sermon cards linking to official YouTube videos', () => {
   assert.equal(mediaPage.key, 'media');
   for (const lang of ['fr', 'en']) {
     const page = mediaPage[lang];
@@ -11,7 +11,7 @@ test('media page has one h1 and sermon cards linking to the official channel onl
     assert.ok((page.bodyHtml.match(/class="sermon-card-modern/g) || []).length >= 4);
     const hrefs = page.bodyHtml.match(/href="([^"]+)"/g);
     for (const href of hrefs) {
-      assert.match(href, /youtube\.com\/@andyphilippeshembo/);
+      assert.match(href, /youtube\.com/);
     }
   }
 });

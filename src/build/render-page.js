@@ -10,18 +10,33 @@ function generateJsonLd({ lang, pageKey, canonical, title, description }) {
     {
       '@type': 'Person',
       '@id': `${SITE_ORIGIN}/#person`,
-      name: 'Philippe A. Shembo',
+      name: 'Apôtre Philippe Andy Shembo',
+      alternateName: ['Philippe A. Shembo', 'Philippe Andy SHEMBO'],
       url: SITE_ORIGIN,
       image: `${SITE_ORIGIN}/assets/portraits/philippe-shembo-hero.webp`,
-      jobTitle: lang === 'fr' ? 'Pasteur, auteur et formateur' : 'Pastor, author and trainer',
+      jobTitle: lang === 'fr' ? 'Apôtre, pasteur, auteur et formateur' : 'Apostle, pastor, author and trainer',
       description: lang === 'fr'
-        ? 'Apôtre et pasteur, fondateur des Éditions Lampe à mes Pieds, responsable de la Famille des Assemblées Chrétiennes au Maroc et des Églises Grâce Déployée.'
-        : 'Apostle and pastor, founder of Lampe à mes Pieds Publishing, leader of the Christian Assemblies Family in Morocco and Grâce Déployée churches.',
+        ? 'Apôtre consacré en 2022 et pasteur ordonné en 2008, responsable de la Famille des Assemblées Chrétiennes au Maroc (affiliée aux Assemblées de Dieu d’Allemagne), visionnaire des Églises Grâce Déployée, de l’ONG Charisma Source Abondante et auteur de 17 ouvrages.'
+        : 'Apostle consecrated in 2022 and pastor ordained in 2008, leader of the Christian Assemblies Family in Morocco (affiliated with Assemblies of God of Germany), visionary of Grâce Déployée churches, Charisma Source Abondante NGO and author of 17 books.',
       knowsLanguage: ['fr', 'en'],
-      alumniOf: {
-        '@type': 'CollegeOrUniversity',
-        name: 'Université Chouaïb Doukkali'
-      },
+      alumniOf: [
+        {
+          '@type': 'CollegeOrUniversity',
+          name: 'Université Chouaïb Doukkali'
+        },
+        {
+          '@type': 'CollegeOrUniversity',
+          name: 'Global University'
+        },
+        {
+          '@type': 'EducationalOrganization',
+          name: 'International School of Ministry'
+        },
+        {
+          '@type': 'CollegeOrUniversity',
+          name: 'Université d\'Ottawa'
+        }
+      ],
       affiliation: [
         {
           '@type': 'Organization',
@@ -29,7 +44,19 @@ function generateJsonLd({ lang, pageKey, canonical, title, description }) {
         },
         {
           '@type': 'Organization',
+          name: 'Assemblées de Dieu d\'Allemagne'
+        },
+        {
+          '@type': 'Organization',
           name: 'Églises Grâce Déployée'
+        },
+        {
+          '@type': 'Organization',
+          name: 'ONG/ASBL Charisma Source Abondante'
+        },
+        {
+          '@type': 'Organization',
+          name: 'Éditions Lampe à mes Pieds'
         }
       ],
       sameAs: Object.values(SITE_CONTENT.social)

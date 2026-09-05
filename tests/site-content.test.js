@@ -5,7 +5,7 @@ import { SITE_CONTENT } from '../src/data/site-content.js';
 
 test('content contains only official social URLs and explicit unfinished values', () => {
   assert.equal(SITE_CONTENT.social.youtube, 'https://www.youtube.com/@andyphilippeshembo');
-  assert.equal(SITE_CONTENT.books.length, 14);
+  assert.equal(SITE_CONTENT.books.length, 17);
   assert.equal(SITE_CONTENT.support.bank.iban, 'À venir');
   assert.equal(SITE_CONTENT.contact.email, 'contact@philippeshembo.com');
 });

@@ -1,10 +1,10 @@
 export const homePage = {
   key: 'home',
   fr: {
-    title: 'Philippe A. Shembo | Ministère, prédications et ouvrages',
-    description: 'Découvrez le ministère, les prédications vidéo et les ouvrages de l’Apôtre Philippe A. Shembo. Églises Grâce Déployée, Assemblées Chrétiennes au Maroc et en RDC.',
-    ogTitle: 'Philippe A. Shembo | Ministère, prédications et ouvrages',
-    ogDescription: 'Découvrez le ministère, les prédications vidéo et les ouvrages de l’Apôtre Philippe A. Shembo.',
+    title: 'Philippe Andy Shembo | Ministère, prédications et ouvrages',
+    description: 'Découvrez le ministère, les prédications vidéo et les 17 ouvrages de l’Apôtre Philippe Andy Shembo. Églises Grâce Déployée, Assemblées Chrétiennes au Maroc et à l’international.',
+    ogTitle: 'Philippe Andy Shembo | Ministère, prédications et ouvrages',
+    ogDescription: 'Découvrez le ministère, les prédications vidéo et les 17 ouvrages de l’Apôtre Philippe Andy Shembo.',
     bodyHtml: `      <section class="hero hero--pure"><div class="shell hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Pasteur · Auteur · Formateur</p>
@@ -20,8 +20,8 @@ export const homePage = {
 
       <section class="section section--sand home-bio-section"><div class="shell bio-preview-grid">
         <div class="bio-preview-copy reveal-on-scroll">
-          <h2 class="section-title">Qui est Philippe A. Shembo ?</h2>
-          <p class="section-intro">Diplômé en Mathématiques de l’Université Chouaïb Doukkali au Maroc, Philippe A. Shembo a répondu à l’appel pastoral en octobre 2007, avant d'être ordonné pasteur en juin 2008. Apôtre et responsable de la Famille des Assemblées Chrétiennes au Maroc, des Églises Grâce Déployée et fondateur des Éditions Lampe à mes Pieds, il se consacre à l’équipement spirituel, au mentorat et au développement d'œuvres durables en Afrique et dans le monde.</p>
+          <h2 class="section-title">Qui est l’Apôtre Philippe Andy&nbsp;Shembo&nbsp;?</h2>
+          <p class="section-intro">Pasteur ordonné depuis 2008 et consacré apôtre en 2022, Philippe Andy Shembo est le responsable de la Famille des Assemblées Chrétiennes au Maroc (affiliée aux Assemblées de Dieu d'Allemagne) et visionnaire des Églises Grâce Déployée (Côte d'Ivoire, Gabon, Cameroun, Amérique du Nord). Titulaire d'une licence en mathématiques, certifié en théologie (Global University, ISOM, DCPI) et candidat au master à l'Université d'Ottawa, il est un auteur prolifique de 17 ouvrages et le visionnaire de l'ONG Charisma Source Abondante.</p>
           <p><a class="button" href="/a-propos/">En savoir plus</a></p>
         </div>
         <div class="bio-preview-media reveal-on-scroll">
@@ -75,36 +75,42 @@ export const homePage = {
           <h2 class="section-title">Dernières Prédications</h2>
         </div>
         <div class="home-sermons-grid">
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/@andyphilippeshembo" target="_blank" rel="noopener noreferrer">
+          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=pxer5c7UXWQ" target="_blank" rel="noopener noreferrer">
             <div class="sermon-media-preview">
+              <img class="sermon-thumb" src="https://img.youtube.com/vi/pxer5c7UXWQ/maxresdefault.jpg" alt="Choisir ce qui aura un impact éternel" loading="lazy">
+              <div class="sermon-overlay" aria-hidden="true"></div>
               <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Prédication · 45 min</span>
+              <span class="sermon-tag">Prédication · 59 min</span>
             </div>
             <div class="sermon-content-box">
-              <h3>La Guérison des Cœurs Brisés</h3>
-              <p>Série d'enseignements sur la restauration divine et la délivrance intérieure.</p>
+              <h3>Choisir ce qui aura un impact éternel</h3>
+              <p>Aligner ses priorités, ses choix de vie et ses talents sur les valeurs éternelles du Royaume de Dieu.</p>
               <span class="sermon-action-link">Regarder sur YouTube →</span>
             </div>
           </a>
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/@andyphilippeshembo" target="_blank" rel="noopener noreferrer">
+          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=mUr1Pm9QQZk" target="_blank" rel="noopener noreferrer">
             <div class="sermon-media-preview">
+              <img class="sermon-thumb" src="https://img.youtube.com/vi/mUr1Pm9QQZk/maxresdefault.jpg" alt="Booz, un homme couronné d'honneur" loading="lazy">
+              <div class="sermon-overlay" aria-hidden="true"></div>
               <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Enseignement · 52 min</span>
+              <span class="sermon-tag">Culte · 2h 43 min</span>
             </div>
             <div class="sermon-content-box">
-              <h3>Le Serviteur Selon le Cœur de Dieu</h3>
-              <p>Principes bibliques et fidélité dans le service chrétien et le leadership.</p>
+              <h3>Booz, un homme couronné d'honneur</h3>
+              <p>Message sur l'élévation divine, l'intégrité et la renommée qui découle de la fidélité dans l'épreuve.</p>
               <span class="sermon-action-link">Regarder sur YouTube →</span>
             </div>
           </a>
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/@andyphilippeshembo" target="_blank" rel="noopener noreferrer">
+          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=43qTSHXgXb0" target="_blank" rel="noopener noreferrer">
             <div class="sermon-media-preview">
+              <img class="sermon-thumb" src="https://img.youtube.com/vi/43qTSHXgXb0/maxresdefault.jpg" alt="Comment prier avec la certitude que Dieu m'écoute ?" loading="lazy">
+              <div class="sermon-overlay" aria-hidden="true"></div>
               <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Mariage &amp; Famille · 40 min</span>
+              <span class="sermon-tag">Enseignement · 37 min</span>
             </div>
             <div class="sermon-content-box">
-              <h3>Bâtir un Mariage Solide en Christ</h3>
-              <p>Clés spirituelles et discernement pour un foyer équilibré et béni.</p>
+              <h3>Comment prier avec la certitude que Dieu m'écoute&nbsp;?</h3>
+              <p>Principes bibliques pour une prière fervente, efficace et fondée sur l'intimité avec le Père céleste.</p>
               <span class="sermon-action-link">Regarder sur YouTube →</span>
             </div>
           </a>
@@ -130,10 +136,10 @@ export const homePage = {
       </div></section>`
   },
   en: {
-    title: 'Philippe A. Shembo | Ministry, sermons and books',
-    description: 'Discover the ministry, video sermons and books by Apostle Philippe A. Shembo. Grâce Déployée churches, Christian Assemblies in Morocco, DRC and worldwide.',
-    ogTitle: 'Philippe A. Shembo | Ministry, sermons and books',
-    ogDescription: 'Discover the ministry, video sermons and books by Apostle Philippe A. Shembo.',
+    title: 'Philippe Andy Shembo | Ministry, sermons and books',
+    description: 'Discover the ministry, video sermons and 17 books by Apostle Philippe Andy Shembo. Grâce Déployée churches, Christian Assemblies in Morocco and worldwide.',
+    ogTitle: 'Philippe Andy Shembo | Ministry, sermons and books',
+    ogDescription: 'Discover the ministry, video sermons and 17 books by Apostle Philippe Andy Shembo.',
     bodyHtml: `      <section class="hero hero--pure"><div class="shell hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Pastor · Author · Trainer</p>
@@ -149,8 +155,8 @@ export const homePage = {
 
       <section class="section section--sand home-bio-section"><div class="shell bio-preview-grid">
         <div class="bio-preview-copy reveal-on-scroll">
-          <h2 class="section-title">Who is Philippe A. Shembo?</h2>
-          <p class="section-intro">A Mathematics graduate from Chouaïb Doukkali University in Morocco, Philippe A. Shembo answered the pastoral call in October 2007 before being ordained in June 2008. Apostle and leader of the Christian Assemblies Family in Morocco, Grâce Déployée churches, and founder of Lampe à mes Pieds Publishing, he is dedicated to spiritual equipping, mentorship, and impactful works across Africa and worldwide.</p>
+          <h2 class="section-title">Who is Apostle Philippe Andy&nbsp;Shembo?</h2>
+          <p class="section-intro">Ordained pastor since 2008 and consecrated apostle in 2022, Philippe Andy Shembo is the senior leader of the Christian Assemblies Family in Morocco (affiliated with the Assemblies of God of Germany) and visionary founder of Grâce Déployée Churches (Côte d'Ivoire, Gabon, Cameroon, North America). Holding a degree in mathematics, certified in theology (Global University, ISOM, DCPI), and a master's candidate at the University of Ottawa, he is a prolific author of 17 published books and visionary of the Charisma Source Abondante NGO.</p>
           <p><a class="button" href="/en/about/">Learn more</a></p>
         </div>
         <div class="bio-preview-media reveal-on-scroll">
@@ -204,36 +210,42 @@ export const homePage = {
           <h2 class="section-title">Latest Sermons</h2>
         </div>
         <div class="home-sermons-grid">
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/@andyphilippeshembo" target="_blank" rel="noopener noreferrer">
+          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=pxer5c7UXWQ" target="_blank" rel="noopener noreferrer">
             <div class="sermon-media-preview">
+              <img class="sermon-thumb" src="https://img.youtube.com/vi/pxer5c7UXWQ/maxresdefault.jpg" alt="Choosing What Has an Eternal Impact" loading="lazy">
+              <div class="sermon-overlay" aria-hidden="true"></div>
               <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Sermon · 45 min</span>
+              <span class="sermon-tag">Sermon · 59 min</span>
             </div>
             <div class="sermon-content-box">
-              <h3>Healing Broken Hearts</h3>
-              <p>Series on divine restoration, inner healing, and spiritual victory.</p>
+              <h3>Choosing What Has an Eternal Impact</h3>
+              <p>Aligning your priorities, life choices, and talents with the everlasting values of God's Kingdom.</p>
               <span class="sermon-action-link">Watch on YouTube →</span>
             </div>
           </a>
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/@andyphilippeshembo" target="_blank" rel="noopener noreferrer">
+          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=mUr1Pm9QQZk" target="_blank" rel="noopener noreferrer">
             <div class="sermon-media-preview">
+              <img class="sermon-thumb" src="https://img.youtube.com/vi/mUr1Pm9QQZk/maxresdefault.jpg" alt="Boaz, a Man Crowned with Honor" loading="lazy">
+              <div class="sermon-overlay" aria-hidden="true"></div>
               <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Teaching · 52 min</span>
+              <span class="sermon-tag">Service · 2h 43 min</span>
             </div>
             <div class="sermon-content-box">
-              <h3>The Servant After God's Heart</h3>
-              <p>Biblical principles and faithfulness in Christian service and leadership.</p>
+              <h3>Boaz, a Man Crowned with Honor</h3>
+              <p>A message on divine elevation, integrity, and honor born of godly faithfulness through trials.</p>
               <span class="sermon-action-link">Watch on YouTube →</span>
             </div>
           </a>
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/@andyphilippeshembo" target="_blank" rel="noopener noreferrer">
+          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=43qTSHXgXb0" target="_blank" rel="noopener noreferrer">
             <div class="sermon-media-preview">
+              <img class="sermon-thumb" src="https://img.youtube.com/vi/43qTSHXgXb0/maxresdefault.jpg" alt="How to Pray with the Assurance That God Hears You" loading="lazy">
+              <div class="sermon-overlay" aria-hidden="true"></div>
               <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Marriage &amp; Family · 40 min</span>
+              <span class="sermon-tag">Teaching · 37 min</span>
             </div>
             <div class="sermon-content-box">
-              <h3>Building a Christ-Centered Marriage</h3>
-              <p>Spiritual keys and wisdom for a balanced, blessed home.</p>
+              <h3>How to Pray with the Assurance That God Hears You</h3>
+              <p>Biblical keys for fervent, effective prayer rooted in confident communion with the Heavenly Father.</p>
               <span class="sermon-action-link">Watch on YouTube →</span>
             </div>
           </a>
