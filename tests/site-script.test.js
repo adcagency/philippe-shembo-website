@@ -8,3 +8,11 @@ test('site.js no longer contains the obsolete hash-preserving language-link logi
   assert.ok(!source.includes('window.location.hash'));
   assert.ok(source.includes('data-menu-button'));
 });
+
+test('site.js contains rotating announcement bar logic', async () => {
+  const source = await readFile('src/scripts/site.js', 'utf8');
+  assert.ok(source.includes('data-announcement-bar'));
+  assert.ok(source.includes('announcement-slide'));
+  assert.ok(source.includes('prefersReducedMotion'));
+});
+
