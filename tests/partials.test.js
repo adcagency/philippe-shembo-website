@@ -42,18 +42,17 @@ test('renderFooter uses the given cross-language path, not a hash', () => {
   assert.match(htmlEn, /<a class="footer-legal" href="\/en\/legal\/">Legal Notice & Privacy<\/a>/);
 });
 
-test('renderHeader includes rotating announcement bar with WhatsApp link and slides', () => {
+test('renderHeader includes scrolling announcement marquee with WhatsApp link', () => {
   const fr = renderHeader({ lang: 'fr', pageKey: 'home' });
-  assert.match(fr, /data-announcement-bar/);
-  assert.match(fr, /class="announcement-slide active"/);
+  assert.match(fr, /class="announcement-bar"/);
+  assert.match(fr, /class="announcement-marquee"/);
   assert.match(fr, /Recevez chaque semaine des encouragements/);
   assert.match(fr, /Rejoindre sur WhatsApp/);
-  assert.match(fr, /Suivre le canal officiel/);
   assert.match(fr, /https:\/\/whatsapp\.com\/channel\//);
 
   const en = renderHeader({ lang: 'en', pageKey: 'home' });
   assert.match(en, /Receive weekly encouragements/);
   assert.match(en, /Join on WhatsApp/);
-  assert.match(en, /Follow official channel/);
 });
+
 
