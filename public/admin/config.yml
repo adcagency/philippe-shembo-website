@@ -1,7 +1,8 @@
 local_backend: true
 
 backend:
-  name: git-gateway
+  name: github
+  repo: adcagency/philippe-shembo-website
   branch: main
 
 # Dossier pour les médias téléversés

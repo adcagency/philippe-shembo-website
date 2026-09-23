@@ -5,22 +5,199 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
     <title>Administration — Apôtre Philippe Andy Shembo</title>
-    <!-- Netlify Identity Widget pour l'authentification Email + Mot de passe -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <!-- Sveltia CMS -->
-    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --violet: #3D0066;
+        --violet-dark: #1E0038;
+        --gold: #D4AF37;
+        --sand: #F7F5F0;
+        --ink: #16131D;
+      }
+      body {
+        margin: 0;
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        background: #f3f0e8;
+        color: var(--ink);
+      }
+      .login-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 1.5rem;
+      }
+      .login-card {
+        width: 100%;
+        max-width: 420px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 16px 40px rgba(61, 0, 102, 0.12);
+        border: 1px solid rgba(212, 175, 55, 0.25);
+        padding: 2.5rem 2rem;
+        text-align: center;
+      }
+      .login-logo {
+        max-width: 110px;
+        height: auto;
+        margin-bottom: 1.25rem;
+      }
+      .login-title {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: 1.85rem;
+        color: var(--violet);
+        margin: 0 0 0.5rem;
+      }
+      .login-sub {
+        font-size: 0.95rem;
+        color: #666;
+        margin: 0 0 2rem;
+      }
+      .form-group {
+        text-align: left;
+        margin-bottom: 1.25rem;
+      }
+      .form-label {
+        display: block;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 0.4rem;
+        color: #333;
+      }
+      .form-input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+      .form-input:focus {
+        outline: none;
+        border-color: var(--violet);
+        box-shadow: 0 0 0 3px rgba(61, 0, 102, 0.15);
+      }
+      .login-button {
+        width: 100%;
+        padding: 0.9rem;
+        font-size: 1rem;
+        font-weight: 600;
+        background: var(--violet);
+        color: #ffffff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        margin-top: 0.75rem;
+      }
+      .login-button:hover {
+        background: var(--violet-dark);
+      }
+      .login-button:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+      .error-msg {
+        background: #fee2e2;
+        color: #b91c1c;
+        padding: 0.75rem;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        margin-bottom: 1.25rem;
+        display: none;
+      }
+    </style>
   </head>
   <body>
+    <div id="login-screen" class="login-container" style="display: none;">
+      <div class="login-card">
+        <img src="/assets/brand/logo-pas.webp" alt="Philippe Andy Shembo" class="login-logo">
+        <h1 class="login-title">Espace Éditeur</h1>
+        <p class="login-sub">Connectez-vous pour rédiger et publier vos articles et contenus.</p>
+
+        <div id="error-box" class="error-msg"></div>
+
+        <form id="login-form">
+          <div class="form-group">
+            <label class="form-label" for="email">Adresse Email</label>
+            <input class="form-input" type="email" id="email" required autocomplete="username" placeholder="votre-email@domaine.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="password">Mot de passe</label>
+            <input class="form-input" type="password" id="password" required autocomplete="current-password" placeholder="••••••••">
+          </div>
+          <button type="submit" id="submit-btn" class="login-button">Se connecter</button>
+        </form>
+      </div>
+    </div>
+
     <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", function(user) {
-          if (!user) {
-            window.netlifyIdentity.on("login", function() {
-              document.location.reload();
-            });
-          }
-        });
-      }
+      (function() {
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        let userSession = null;
+
+        try {
+          userSession = JSON.parse(localStorage.getItem('sveltia-cms.user') || 'null');
+        } catch {}
+
+        function loadSveltiaCMS() {
+          const script = document.createElement('script');
+          script.src = 'https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js';
+          document.head.appendChild(script);
+        }
+
+        // Si nous sommes en local (sans auth) OU déjà authentifié avec un token valide
+        if (isLocal || (userSession && userSession.token)) {
+          loadSveltiaCMS();
+        } else {
+          // Affichage du formulaire de connexion Email + Mot de passe
+          const loginScreen = document.getElementById('login-screen');
+          loginScreen.style.display = 'flex';
+
+          const form = document.getElementById('login-form');
+          const errorBox = document.getElementById('error-box');
+          const submitBtn = document.getElementById('submit-btn');
+
+          form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            errorBox.style.display = 'none';
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Connexion en cours...';
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+              const res = await fetch('/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+              });
+
+              const data = await res.json();
+
+              if (!res.ok || !data.success) {
+                throw new Error(data.error || 'Identifiants incorrects.');
+              }
+
+              // Sauvegarde de la session dans le format officiel attendu par Sveltia CMS
+              localStorage.setItem('sveltia-cms.user', JSON.stringify(data.user));
+              
+              // Masquage du formulaire et chargement immédiat de Sveltia CMS
+              loginScreen.style.display = 'none';
+              loadSveltiaCMS();
+            } catch (err) {
+              errorBox.textContent = err.message;
+              errorBox.style.display = 'block';
+              submitBtn.disabled = false;
+              submitBtn.textContent = 'Se connecter';
+            }
+          });
+        }
+      })();
     </script>
   </body>
 </html>
