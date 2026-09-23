@@ -1,21 +1,19 @@
 ---
 title: "Bâtir avec un cœur guéri : Le fondement d'un service fécond"
 date: 2026-09-20T09:00:00Z
-author: "Apôtre Philippe Andy Shembo"
-category: "Enseignement"
-coverImage: "/assets/portraits/philippe-shembo-hero.webp"
-excerpt: "Dieu ne cherche pas seulement des bâtisseurs d'œuvres, mais des cœurs restaurés. Découvrez pourquoi la guérison intérieure est le prérequis indispensable pour porter un fruit durable dans le Royaume."
+author: Apôtre Philippe Andy Shembo
+category: Enseignement
+coverImage: /assets/portraits/philippe-shembo-hero.webp
+excerpt: Dieu ne cherche pas seulement des bâtisseurs d'œuvres, mais des cœurs restaurés. Découvrez pourquoi la guérison intérieure est le prérequis indispensable pour porter un fruit durable dans le Royaume.
 ---
 
-Le service de Dieu et l'accomplissement de notre destinée ne peuvent reposer sur des fondations fragiles ou des blessures non cicatrisées. Trop souvent, le zèle et les compétences masquent des fêlures intérieures qui finissent par fragiliser l'édifice tout entier.
-
-> *« Garde ton cœur plus que toute autre chose, car de lui jaillissent les sources de la vie. »* — Proverbes 4:23
+> _« Garde ton cœur plus que toute autre chose, car de lui jaillissent les sources de la vie. »_ — Proverbes 4:23
 
 ## 1. La tentation de servir pour compenser
 
 Dans le parcours pastoral et le ministère, nous rencontrons de nombreux serviteurs et fidèles animés d'une grande passion. Cependant, lorsque le service devient une quête d'approbation ou un exutoire à des traumatismes passés, il mène inévitablement à l'épuisement ou aux déceptions amères.
 
-Comme nous le développons dans la collection *« La Guérison des cœurs brisés »*, Dieu s'intéresse d'abord à l'état de l'ouvrier avant de s'intéresser à l'ampleur de la moisson.
+Comme nous le développons dans la collection _« La Guérison des cœurs brisés »_, Dieu s'intéresse d'abord à l'état de l'ouvrier avant de s'intéresser à l'ampleur de la moisson.
 
 ## 2. Le processus divin de restauration
 
