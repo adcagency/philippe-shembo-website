@@ -5,7 +5,7 @@ import { renderFooter } from '../partials/footer.js';
 
 const SITE_ORIGIN = 'https://philippeshembo.com';
 
-function generateJsonLd({ lang, pageKey, canonical, title, description }) {
+function generateJsonLd({ lang, pageKey, canonical, title, description, postDate, author, ogImageUrl }) {
   const graph = [
     {
       '@type': 'Person',
@@ -73,7 +73,47 @@ function generateJsonLd({ lang, pageKey, canonical, title, description }) {
     }
   ];
 
-  if (pageKey !== 'home') {
+  if (pageKey === 'blog-post') {
+    graph.push({
+      '@type': 'BlogPosting',
+      '@id': `${canonical}#article`,
+      headline: title.split('|')[0].trim(),
+      description,
+      datePublished: postDate,
+      dateModified: postDate,
+      author: {
+        '@type': 'Person',
+        name: author || 'Apôtre Philippe Andy Shembo',
+        url: SITE_ORIGIN
+      },
+      image: ogImageUrl,
+      inLanguage: lang === 'fr' ? 'fr-FR' : 'en-US'
+    });
+
+    graph.push({
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: lang === 'fr' ? 'Accueil' : 'Home',
+          item: `${SITE_ORIGIN}${lang === 'fr' ? '/' : '/en/'}`
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Blog',
+          item: `${SITE_ORIGIN}${lang === 'fr' ? '/blog/' : '/en/blog/'}`
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: title.split('|')[0].trim(),
+          item: canonical
+        }
+      ]
+    });
+  } else if (pageKey !== 'home') {
     graph.push({
       '@type': 'BreadcrumbList',
       itemListElement: [
@@ -104,6 +144,14 @@ function generateJsonLd({ lang, pageKey, canonical, title, description }) {
   } else if (pageKey === 'contact') {
     graph.push({
       '@type': 'ContactPage',
+      '@id': `${canonical}#webpage`,
+      url: canonical,
+      name: title,
+      description: description
+    });
+  } else if (pageKey === 'blog') {
+    graph.push({
+      '@type': 'CollectionPage',
       '@id': `${canonical}#webpage`,
       url: canonical,
       name: title,
@@ -148,21 +196,46 @@ const HERO_PRELOADS = {
   about: '/assets/portraits/philippe-shembo-couple.webp'
 };
 
-export function renderPage({ lang, pageKey, title, description, ogTitle, ogDescription, bodyHtml }) {
-  const path = pathFor(pageKey, lang);
+export function renderPage({
+  lang,
+  pageKey,
+  title,
+  description,
+  ogTitle,
+  ogDescription,
+  bodyHtml,
+  slug,
+  ogImage,
+  postDate,
+  author
+}) {
+  const path = pathFor(pageKey, lang, slug);
   const otherLang = lang === 'fr' ? 'en' : 'fr';
-  const otherPath = pathFor(pageKey, otherLang);
+  const otherPath = pathFor(pageKey, otherLang, slug);
   const canonical = `${SITE_ORIGIN}${path}`;
   const frPath = lang === 'fr' ? path : otherPath;
   const enPath = lang === 'en' ? path : otherPath;
   const ogLocale = lang === 'fr' ? 'fr_FR' : 'en_US';
   const skipLink = renderSkipLink(lang);
-  const header = renderHeader({ lang, pageKey });
+  const header = renderHeader({ lang, pageKey: pageKey === 'blog-post' ? 'blog' : pageKey });
   const footer = renderFooter({ lang, otherLangPath: otherPath });
-  const jsonLd = generateJsonLd({ lang, pageKey, canonical, title, description });
+  const finalOgImage = ogImage
+    ? (ogImage.startsWith('http') ? ogImage : `${SITE_ORIGIN}${ogImage}`)
+    : `${SITE_ORIGIN}/og/philippe-shembo-${lang}.png`;
+  const jsonLd = generateJsonLd({
+    lang,
+    pageKey,
+    canonical,
+    title,
+    description,
+    postDate,
+    author,
+    ogImageUrl: finalOgImage
+  });
   const heroPreload = HERO_PRELOADS[pageKey]
     ? `\n    <link rel="preload" href="${HERO_PRELOADS[pageKey]}" as="image" fetchpriority="high">`
-    : '';
+    : (pageKey === 'blog-post' && ogImage ? `\n    <link rel="preload" href="${ogImage}" as="image" fetchpriority="high">` : '');
+  const ogType = pageKey === 'blog-post' ? 'article' : 'website';
 
   return `<!doctype html>
 <html lang="${lang}">
@@ -186,14 +259,14 @@ export function renderPage({ lang, pageKey, title, description, ogTitle, ogDescr
     <link rel="alternate" hreflang="fr" href="${SITE_ORIGIN}${frPath}">
     <link rel="alternate" hreflang="en" href="${SITE_ORIGIN}${enPath}">
     <link rel="alternate" hreflang="x-default" href="${SITE_ORIGIN}${frPath}">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="${ogType}">
     <meta property="og:locale" content="${ogLocale}">
     <meta property="og:site_name" content="Apôtre Philippe A. Shembo">
     <meta property="og:title" content="${ogTitle}">
     <meta property="og:description" content="${ogDescription}">
     <meta property="og:url" content="${canonical}">
-    <meta property="og:image" content="${SITE_ORIGIN}/og/philippe-shembo-${lang}.png">
-    <meta property="og:image:secure_url" content="${SITE_ORIGIN}/og/philippe-shembo-${lang}.png">
+    <meta property="og:image" content="${finalOgImage}">
+    <meta property="og:image:secure_url" content="${finalOgImage}">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -201,7 +274,7 @@ export function renderPage({ lang, pageKey, title, description, ogTitle, ogDescr
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${ogTitle}">
     <meta name="twitter:description" content="${ogDescription}">
-    <meta name="twitter:image" content="${SITE_ORIGIN}/og/philippe-shembo-${lang}.png">
+    <meta name="twitter:image" content="${finalOgImage}">
     <meta name="twitter:image:alt" content="${lang === 'fr' ? 'Apôtre Philippe A. Shembo — Pasteur, Auteur, Formateur' : 'Apostle Philippe A. Shembo — Pastor, Author, Trainer'}">
     <link rel="stylesheet" href="/src/styles/main.css">
     <script type="application/ld+json">${jsonLd}</script>

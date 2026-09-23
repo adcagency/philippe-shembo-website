@@ -1,0 +1,146 @@
+local_backend: true
+
+backend:
+  name: github
+  repo: adcagency/philippe-shembo-website
+  branch: main
+  base_url: https://philippeshembo.com
+  auth_endpoint: /api/auth
+
+# Dossier pour les médias téléversés
+media_folder: public/assets/uploads
+public_folder: /assets/uploads
+
+# Support multilingue natif FR/EN
+i18n:
+  structure: multiple_files
+  locales: [fr, en]
+  default_locale: fr
+
+# Workflow éditorial (brouillon -> relecture -> publication)
+publish_mode: editorial_workflow
+
+collections:
+  # ==========================================
+  # 1. ARTICLES DE BLOG
+  # ==========================================
+  - name: blog
+    label: "Articles de Blog"
+    label_singular: "Article"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    i18n: true
+    summary: "{{title}} ({{date | date('YYYY-MM-DD')}}) - {{category}}"
+    fields:
+      - { label: "Titre de l'article", name: "title", widget: "string", i18n: true }
+      - { label: "Date de publication", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ", date_format: "YYYY-MM-DD", time_format: "HH:mm" }
+      - { label: "Auteur", name: "author", widget: "string", default: "Apôtre Philippe Andy Shembo" }
+      - label: "Catégorie"
+        name: "category"
+        widget: "select"
+        i18n: true
+        options:
+          - "Enseignement"
+          - "Méditation"
+          - "Exhortation"
+          - "Famille & Foyer"
+          - "Témoignage"
+          - "Leadership Spirituel"
+      - { label: "Image de couverture", name: "coverImage", widget: "image", required: false }
+      - { label: "Extrait (affiché dans la liste)", name: "excerpt", widget: "text", i18n: true }
+      - { label: "Corps de l'article", name: "body", widget: "markdown", i18n: true }
+
+  # ==========================================
+  # 2. BIBLIOGRAPHIE & OUVRAGES
+  # ==========================================
+  - name: books
+    label: "Ouvrages & Livres"
+    label_singular: "Ouvrage"
+    folder: "content/books"
+    extension: "json"
+    format: "json"
+    create: true
+    slug: "{{order}}-{{slug}}"
+    summary: "#{{order}} - {{title}} ({{status}})"
+    fields:
+      - { label: "Ordre d'affichage", name: "order", widget: "number", value_type: "int", min: 1, default: 1 }
+      - { label: "Titre de l'ouvrage", name: "title", widget: "string" }
+      - { label: "Description de l'ouvrage", name: "description", widget: "text" }
+      - { label: "Image de couverture", name: "image", widget: "image" }
+      - { label: "URL Boutique / Achat", name: "url", widget: "string", default: "À venir" }
+      - label: "Statut de parution"
+        name: "status"
+        widget: "select"
+        options:
+          - { label: "Disponible", value: "disponible" }
+          - { label: "À paraître", value: "a_paraitre" }
+          - { label: "Réimpression", value: "reimpression" }
+        default: "disponible"
+
+  # ==========================================
+  # 3. VIDÉOS & SERMONS YOUTUBE
+  # ==========================================
+  - name: sermons
+    label: "Vidéos & Prédications"
+    label_singular: "Prédication"
+    folder: "content/sermons"
+    extension: "json"
+    format: "json"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{titleFr}} - {{youtubeId}}"
+    fields:
+      - { label: "Ordre d'affichage", name: "order", widget: "number", value_type: "int", min: 1, default: 1 }
+      - { label: "Identifiant YouTube (ex: pxer5c7UXWQ)", name: "youtubeId", widget: "string" }
+      - { label: "Titre (FR)", name: "titleFr", widget: "string" }
+      - { label: "Titre (EN)", name: "titleEn", widget: "string" }
+      - { label: "Tag / Durée (FR, ex: Prédication · 59 min)", name: "tagFr", widget: "string" }
+      - { label: "Tag / Durée (EN, ex: Sermon · 59 min)", name: "tagEn", widget: "string" }
+      - { label: "Description (FR)", name: "descFr", widget: "text" }
+      - { label: "Description (EN)", name: "descEn", widget: "text" }
+
+  # ==========================================
+  # 4. PARAMÈTRES GÉNÉRAUX
+  # ==========================================
+  - name: settings
+    label: "Paramètres du Site"
+    files:
+      - label: "Coordonnées & Réseaux Sociaux"
+        name: "general"
+        file: "content/settings/general.json"
+        format: "json"
+        fields:
+          - label: "Réseaux Sociaux"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "Chaîne WhatsApp", name: "whatsapp", widget: "string" }
+              - { label: "Chaîne YouTube", name: "youtube", widget: "string" }
+              - { label: "Page Facebook", name: "facebook", widget: "string" }
+              - { label: "Compte Instagram", name: "instagram", widget: "string" }
+              - { label: "Profil LinkedIn", name: "linkedin", widget: "string" }
+          - label: "Contact Officiel"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Email de contact", name: "email", widget: "string" }
+          - label: "Soutien & Dons"
+            name: "support"
+            widget: "object"
+            fields:
+              - label: "Coordonnées Bancaires"
+                name: "bank"
+                widget: "object"
+                fields:
+                  - { label: "Banque", name: "bank", widget: "string" }
+                  - { label: "Titulaire", name: "holder", widget: "string" }
+                  - { label: "IBAN", name: "iban", widget: "string" }
+                  - { label: "Code SWIFT / BIC", name: "swift", widget: "string" }
+              - label: "Mobile Money"
+                name: "mobileMoney"
+                widget: "object"
+                fields:
+                  - { label: "Opérateur", name: "operator", widget: "string" }
+                  - { label: "Numéro", name: "number", widget: "string" }
+                  - { label: "Bénéficiaire", name: "beneficiary", widget: "string" }

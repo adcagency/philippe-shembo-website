@@ -1,3 +1,31 @@
+// src/pages/media.js
+import { getSermons } from '../data/sermons-service.js';
+
+function renderSermonCards(lang) {
+  const sermons = getSermons();
+  const actionLabel = lang === 'fr' ? 'Regarder sur YouTube →' : 'Watch on YouTube →';
+
+  return sermons.map((sermon) => {
+    const title = lang === 'fr' ? sermon.titleFr : sermon.titleEn;
+    const tag = lang === 'fr' ? sermon.tagFr : sermon.tagEn;
+    const desc = lang === 'fr' ? sermon.descFr : sermon.descEn;
+
+    return `          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=${sermon.youtubeId}" target="_blank" rel="noopener noreferrer">
+            <div class="sermon-media-preview">
+              <img class="sermon-thumb" src="https://img.youtube.com/vi/${sermon.youtubeId}/maxresdefault.jpg" alt="${title}" loading="lazy">
+              <div class="sermon-overlay" aria-hidden="true"></div>
+              <div class="sermon-play-icon" aria-hidden="true">▶</div>
+              <span class="sermon-tag">${tag}</span>
+            </div>
+            <div class="sermon-content-box">
+              <h2>${title}</h2>
+              <p>${desc}</p>
+              <span class="sermon-action-link">${actionLabel}</span>
+            </div>
+          </a>`;
+  }).join('\n\n');
+}
+
 export const mediaPage = {
   key: 'media',
   fr: {
@@ -20,89 +48,7 @@ export const mediaPage = {
         </div>
 
         <div class="sermon-grid margin-top-md">
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=pxer5c7UXWQ" target="_blank" rel="noopener noreferrer">
-            <div class="sermon-media-preview">
-              <img class="sermon-thumb" src="https://img.youtube.com/vi/pxer5c7UXWQ/maxresdefault.jpg" alt="Choisir ce qui aura un impact éternel" loading="lazy">
-              <div class="sermon-overlay" aria-hidden="true"></div>
-              <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Prédication · 59 min</span>
-            </div>
-            <div class="sermon-content-box">
-              <h2>Choisir ce qui aura un impact éternel</h2>
-              <p>Aligner ses priorités, ses choix de vie et ses talents sur les valeurs éternelles du Royaume de Dieu.</p>
-              <span class="sermon-action-link">Regarder sur YouTube →</span>
-            </div>
-          </a>
-
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=mUr1Pm9QQZk" target="_blank" rel="noopener noreferrer">
-            <div class="sermon-media-preview">
-              <img class="sermon-thumb" src="https://img.youtube.com/vi/mUr1Pm9QQZk/maxresdefault.jpg" alt="Booz, un homme couronné d'honneur" loading="lazy">
-              <div class="sermon-overlay" aria-hidden="true"></div>
-              <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Culte · 2h 43 min</span>
-            </div>
-            <div class="sermon-content-box">
-              <h2>Booz, un homme couronné d'honneur</h2>
-              <p>Message sur l'élévation divine, l'intégrité et la renommée qui découle de la fidélité dans l'épreuve.</p>
-              <span class="sermon-action-link">Regarder sur YouTube →</span>
-            </div>
-          </a>
-
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=43qTSHXgXb0" target="_blank" rel="noopener noreferrer">
-            <div class="sermon-media-preview">
-              <img class="sermon-thumb" src="https://img.youtube.com/vi/43qTSHXgXb0/maxresdefault.jpg" alt="Comment prier avec la certitude que Dieu m'écoute ?" loading="lazy">
-              <div class="sermon-overlay" aria-hidden="true"></div>
-              <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Enseignement · 37 min</span>
-            </div>
-            <div class="sermon-content-box">
-              <h2>Comment prier avec la certitude que Dieu m'écoute&nbsp;?</h2>
-              <p>Principes bibliques pour une prière fervente, efficace et fondée sur l'intimité avec le Père céleste.</p>
-              <span class="sermon-action-link">Regarder sur YouTube →</span>
-            </div>
-          </a>
-
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=gVZffwLAVmY" target="_blank" rel="noopener noreferrer">
-            <div class="sermon-media-preview">
-              <img class="sermon-thumb" src="https://img.youtube.com/vi/gVZffwLAVmY/maxresdefault.jpg" alt="Près de Sodome aujourd’hui… Dans Sodome demain" loading="lazy">
-              <div class="sermon-overlay" aria-hidden="true"></div>
-              <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Prédication · 2h 15 min</span>
-            </div>
-            <div class="sermon-content-box">
-              <h2>Près de Sodome aujourd’hui… Dans Sodome demain</h2>
-              <p>Exhortation et discernement spirituel face aux compromis progressifs et à la préservation de la sainteté.</p>
-              <span class="sermon-action-link">Regarder sur YouTube →</span>
-            </div>
-          </a>
-
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=pBMA3oGVLDk" target="_blank" rel="noopener noreferrer">
-            <div class="sermon-media-preview">
-              <img class="sermon-thumb" src="https://img.youtube.com/vi/pBMA3oGVLDk/maxresdefault.jpg" alt="Ce qu'Orpa a choisi n'existe plus" loading="lazy">
-              <div class="sermon-overlay" aria-hidden="true"></div>
-              <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Culte · 2h 16 min</span>
-            </div>
-            <div class="sermon-content-box">
-              <h2>Ce qu'Orpa a choisi n'existe plus</h2>
-              <p>Le choix de la destinée : renoncer au visible éphémère pour s'attacher à l'appel durable de Dieu.</p>
-              <span class="sermon-action-link">Regarder sur YouTube →</span>
-            </div>
-          </a>
-
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=3LNiBmQ8Qf0" target="_blank" rel="noopener noreferrer">
-            <div class="sermon-media-preview">
-              <img class="sermon-thumb" src="https://img.youtube.com/vi/3LNiBmQ8Qf0/maxresdefault.jpg" alt="Culte de Célébration" loading="lazy">
-              <div class="sermon-overlay" aria-hidden="true"></div>
-              <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Culte · 3h 15 min</span>
-            </div>
-            <div class="sermon-content-box">
-              <h2>Culte de Célébration</h2>
-              <p>Temps d'adoration, ministère puissant de la Parole apostolique et communion fraternelle édifiante.</p>
-              <span class="sermon-action-link">Regarder sur YouTube →</span>
-            </div>
-          </a>
+${renderSermonCards('fr')}
         </div>
 
         <div class="media-cta-banner margin-top-md reveal-on-scroll text-center">
@@ -133,89 +79,7 @@ export const mediaPage = {
         </div>
 
         <div class="sermon-grid margin-top-md">
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=pxer5c7UXWQ" target="_blank" rel="noopener noreferrer">
-            <div class="sermon-media-preview">
-              <img class="sermon-thumb" src="https://img.youtube.com/vi/pxer5c7UXWQ/maxresdefault.jpg" alt="Choosing What Has an Eternal Impact" loading="lazy">
-              <div class="sermon-overlay" aria-hidden="true"></div>
-              <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Sermon · 59 min</span>
-            </div>
-            <div class="sermon-content-box">
-              <h2>Choosing What Has an Eternal Impact</h2>
-              <p>Aligning your priorities, life choices, and talents with the everlasting values of God's Kingdom.</p>
-              <span class="sermon-action-link">Watch on YouTube →</span>
-            </div>
-          </a>
-
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=mUr1Pm9QQZk" target="_blank" rel="noopener noreferrer">
-            <div class="sermon-media-preview">
-              <img class="sermon-thumb" src="https://img.youtube.com/vi/mUr1Pm9QQZk/maxresdefault.jpg" alt="Boaz, a Man Crowned with Honor" loading="lazy">
-              <div class="sermon-overlay" aria-hidden="true"></div>
-              <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Service · 2h 43 min</span>
-            </div>
-            <div class="sermon-content-box">
-              <h2>Boaz, a Man Crowned with Honor</h2>
-              <p>A message on divine elevation, integrity, and honor born of godly faithfulness through trials.</p>
-              <span class="sermon-action-link">Watch on YouTube →</span>
-            </div>
-          </a>
-
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=43qTSHXgXb0" target="_blank" rel="noopener noreferrer">
-            <div class="sermon-media-preview">
-              <img class="sermon-thumb" src="https://img.youtube.com/vi/43qTSHXgXb0/maxresdefault.jpg" alt="How to Pray with the Assurance That God Hears You" loading="lazy">
-              <div class="sermon-overlay" aria-hidden="true"></div>
-              <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Teaching · 37 min</span>
-            </div>
-            <div class="sermon-content-box">
-              <h2>How to Pray with the Assurance That God Hears You</h2>
-              <p>Biblical keys for fervent, effective prayer rooted in confident communion with the Heavenly Father.</p>
-              <span class="sermon-action-link">Watch on YouTube →</span>
-            </div>
-          </a>
-
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=gVZffwLAVmY" target="_blank" rel="noopener noreferrer">
-            <div class="sermon-media-preview">
-              <img class="sermon-thumb" src="https://img.youtube.com/vi/gVZffwLAVmY/maxresdefault.jpg" alt="Near Sodom Today… In Sodom Tomorrow" loading="lazy">
-              <div class="sermon-overlay" aria-hidden="true"></div>
-              <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Sermon · 2h 15 min</span>
-            </div>
-            <div class="sermon-content-box">
-              <h2>Near Sodom Today… In Sodom Tomorrow</h2>
-              <p>Spiritual discernment and solemn warning regarding progressive compromise and worldly attraction.</p>
-              <span class="sermon-action-link">Watch on YouTube →</span>
-            </div>
-          </a>
-
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=pBMA3oGVLDk" target="_blank" rel="noopener noreferrer">
-            <div class="sermon-media-preview">
-              <img class="sermon-thumb" src="https://img.youtube.com/vi/pBMA3oGVLDk/maxresdefault.jpg" alt="What Orpah Chose No Longer Exists" loading="lazy">
-              <div class="sermon-overlay" aria-hidden="true"></div>
-              <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Service · 2h 16 min</span>
-            </div>
-            <div class="sermon-content-box">
-              <h2>What Orpah Chose No Longer Exists</h2>
-              <p>The choice of destiny: forsaking the fleeting to cling to God's eternal promise and calling.</p>
-              <span class="sermon-action-link">Watch on YouTube →</span>
-            </div>
-          </a>
-
-          <a class="sermon-card-modern reveal-on-scroll" href="https://www.youtube.com/watch?v=3LNiBmQ8Qf0" target="_blank" rel="noopener noreferrer">
-            <div class="sermon-media-preview">
-              <img class="sermon-thumb" src="https://img.youtube.com/vi/3LNiBmQ8Qf0/maxresdefault.jpg" alt="Celebration Service" loading="lazy">
-              <div class="sermon-overlay" aria-hidden="true"></div>
-              <div class="sermon-play-icon" aria-hidden="true">▶</div>
-              <span class="sermon-tag">Worship · 3h 15 min</span>
-            </div>
-            <div class="sermon-content-box">
-              <h2>Celebration Service</h2>
-              <p>Praise, worship, powerful apostolic preaching, and life-transforming ministry in the Spirit.</p>
-              <span class="sermon-action-link">Watch on YouTube →</span>
-            </div>
-          </a>
+${renderSermonCards('en')}
         </div>
 
         <div class="media-cta-banner margin-top-md reveal-on-scroll text-center">

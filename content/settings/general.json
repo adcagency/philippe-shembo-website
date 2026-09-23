@@ -1,0 +1,30 @@
+{
+  "social": {
+    "facebook": "https://www.facebook.com/PasteurPhilippeShembo",
+    "instagram": "https://www.instagram.com/pasteur.philippe.a.shembo/",
+    "linkedin": "https://www.linkedin.com/in/philippe-a-shembo-28920733b/",
+    "youtube": "https://www.youtube.com/@andyphilippeshembo",
+    "whatsapp": "https://whatsapp.com/channel/0029Vb8JW7mDp2Q7RdPrVh3o"
+  },
+  "support": {
+    "bank": {
+      "bank": "À venir",
+      "holder": "À venir",
+      "iban": "À venir",
+      "swift": "À venir"
+    },
+    "mobileMoney": {
+      "operator": "À venir",
+      "number": "À venir",
+      "beneficiary": "À venir"
+    },
+    "other": {
+      "name": "À venir",
+      "url": "À venir",
+      "currency": "À venir"
+    }
+  },
+  "contact": {
+    "email": "contact@philippeshembo.com"
+  }
+}
