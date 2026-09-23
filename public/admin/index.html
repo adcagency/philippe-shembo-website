@@ -5,9 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
     <title>Administration — Apôtre Philippe Andy Shembo</title>
-    <!-- Sveltia CMS (100% compatible Decap CMS config.yml) -->
+    <!-- Netlify Identity Widget pour l'authentification Email + Mot de passe -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!-- Sveltia CMS -->
     <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
   </head>
   <body>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", function(user) {
+          if (!user) {
+            window.netlifyIdentity.on("login", function() {
+              document.location.reload();
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>

@@ -1,11 +1,8 @@
 local_backend: true
 
 backend:
-  name: github
-  repo: adcagency/philippe-shembo-website
+  name: git-gateway
   branch: main
-  base_url: https://philippeshembo.com
-  auth_endpoint: /api/auth
 
 # Dossier pour les médias téléversés
 media_folder: public/assets/uploads
