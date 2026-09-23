@@ -8,3 +8,5 @@ test('site.js no longer contains the obsolete hash-preserving language-link logi
   assert.ok(!source.includes('window.location.hash'));
   assert.ok(source.includes('data-menu-button'));
 });
+
+
