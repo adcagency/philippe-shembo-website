@@ -1,6 +1,6 @@
 ---
 title: "Bâtir avec un cœur guéri : Le fondement d'un service fécond"
-date: 2026-09-20T09:00:00Z
+date: 2026-09-23T20:44:00+00:00
 author: Apôtre Philippe Andy Shembo
 category: Enseignement
 coverImage: /assets/portraits/philippe-shembo-hero.webp
