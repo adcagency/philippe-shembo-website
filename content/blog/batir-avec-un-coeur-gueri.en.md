@@ -1,21 +1,21 @@
 ---
-title: "Building with a Healed Heart: The Foundation of Fruitful Service"
+title: 'Building with a Healed Heart: The Foundation of Fruitful Service'
 date: 2026-09-20T09:00:00Z
-author: "Apostle Philippe Andy Shembo"
-category: "Enseignement"
-coverImage: "/assets/portraits/philippe-shembo-hero.webp"
-excerpt: "God is not merely looking for builders of structures, but restored hearts. Discover why inner healing is an essential requirement to bear lasting fruit in the Kingdom."
+author: Apostle Philippe Andy Shembo
+category: Enseignement
+coverImage: /assets/portraits/philippe-shembo-hero.webp
+excerpt: God is not merely looking for builders of structures, but restored hearts. Discover why inner healing is an essential requirement to bear lasting fruit in the Kingdom.
 ---
 
 Serving God and fulfilling our destiny cannot rest on fragile foundations or unhealed wounds. All too often, zeal and talent conceal inner fractures that ultimately compromise the entire house.
 
-> *“Above all else, guard your heart, for everything you do flows from it.”* — Proverbs 4:23
+> _“Above all else, guard your heart, for everything you do flows from it.”_ — Proverbs 4:23
 
 ## 1. The Temptation to Serve as Compensation
 
 Throughout pastoral ministry, we encounter many believers driven by great passion. However, when service becomes a search for human validation or an escape from past traumas, it inevitably results in burnout and bitter disappointment.
 
-As explored in the collection *“The Healing of Broken Hearts”*, God is primarily attentive to the state of the laborer before focusing on the magnitude of the harvest.
+As explored in the collection _“The Healing of Broken Hearts”_, God is primarily attentive to the state of the laborer before focusing on the magnitude of the harvest.
 
 ## 2. The Divine Path of Restoration
 
