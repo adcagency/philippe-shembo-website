@@ -19,5 +19,8 @@
     "decap-server": "^3.11.2",
     "serve": "^14.2.4",
     "sharp": "^0.35.4"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
   }
 }
