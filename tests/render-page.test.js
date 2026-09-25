@@ -55,4 +55,13 @@ test('renderPage includes robots meta directive and high-res Open Graph / Twitte
   assert.match(htmlEn, /<meta name="twitter:image" content="https:\/\/philippeshembo\.com\/og\/philippe-shembo-en\.png">/);
 });
 
+test('renderPage embeds Google Tag Manager in head and noscript after body', () => {
+  const html = renderPage({ lang: 'fr', pageKey: 'home', ...base });
+  assert.match(html, /<!-- Google Tag Manager -->\s*<script>\(function\(w,d,s,l,i\)\{w\[l\]=w\[l\]\|\|\[\];/);
+  assert.match(html, /https:\/\/www\.googletagmanager\.com\/gtm\.js\?id='\+i\+dl/);
+  assert.match(html, /'GTM-KTWV8WHW'/);
+  assert.match(html, /<!-- Google Tag Manager \(noscript\) -->\s*<noscript><iframe src="https:\/\/www\.googletagmanager\.com\/ns\.html\?id=GTM-KTWV8WHW"/);
+});
+
+
 
