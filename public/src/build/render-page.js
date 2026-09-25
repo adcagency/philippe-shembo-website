@@ -299,6 +299,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/speed-insights/script.js"></script>
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/analytics/script.js"></script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
